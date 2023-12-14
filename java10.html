@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArrayList vs. LinkedList in Java</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <p>Both `ArrayList` and `LinkedList` are part of Java's Collection Framework and are used to store collections of objects. However, they have different characteristics and are suitable for different use cases based on their internal data structures and performance characteristics.</p>
+
+    <h2>ArrayList:</h2>
+    <ul>
+        <li><strong>Internal Data Structure:</strong> `ArrayList` uses an array to store elements. Elements are stored in contiguous memory locations, which makes random access (access by index) fast.</li>
+        <li><strong>Performance:</strong> `ArrayList` is efficient for random access and retrieval of elements by index. It has O(1) time complexity for these operations.</li>
+        <li><strong>Insertions and Deletions:</strong> Insertions and deletions in the middle or beginning of an `ArrayList` can be slow, as elements may need to be shifted.</li>
+        <li><strong>Memory Usage:</strong> `ArrayList` may consume more memory than `LinkedList` due to its fixed-size array.</li>
+    </ul>
+
+    <h2>LinkedList:</h2>
+    <ul>
+        <li><strong>Internal Data Structure:</strong> `LinkedList` uses a doubly-linked list to store elements. Each element points to the next and previous elements, allowing for efficient insertions and deletions at any position in the list.</li>
+        <li><strong>Performance:</strong> `LinkedList` is efficient for insertions and deletions, especially in the middle or beginning of the list. It has O(1) time complexity for these operations.</li>
+        <li><strong>Random Access:</strong> Random access is slower in `LinkedList` compared to `ArrayList`. Access by index has O(n) time complexity.</li>
+        <li><strong>Memory Usage:</strong> `LinkedList` may consume less memory than `ArrayList` due to its dynamic nature and lack of a fixed-size array.</li>
+    </ul>
+
+    <h2>Use Cases:</h2>
+    <p>Choose `ArrayList` when:</p>
+    <ul>
+        <li>You need fast random access and retrieval of elements.</li>
+        <li>You perform frequent read operations and fewer insertions/deletions.</li>
+    </ul>
+
+    <p>Choose `LinkedList` when:</p>
+    <ul>
+        <li>You need efficient insertions and deletions, especially in the middle of the collection.</li>
+        <li>Random access is not a primary concern, or you perform more insertions/deletions than reads.</li>
+    </ul>
+
+    <h2>Example:</h2>
+    <pre><code>
+// ArrayList Example
+ArrayList&lt;String&gt; arrayList = new ArrayList&lt;&gt;();
+arrayList.add("Apple");
+arrayList.add("Banana");
+arrayList.add("Cherry");
+
+// LinkedList Example
+LinkedList&lt;String&gt; linkedList = new LinkedList&lt;&gt;();
+linkedList.add("Apple");
+linkedList.add("Banana");
+linkedList.add("Cherry");
+    </code></pre>
+
+    <p>In this example, both `ArrayList` and `LinkedList` are used to store a list of fruits. The choice between them depends on the specific requirements of your application.</p>
+
+</body>
+</html>

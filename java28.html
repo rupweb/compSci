@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Default Methods in Interfaces in Java</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <p>Default methods, introduced in Java 8, are a feature that allows interfaces to have method implementations. Before Java 8, interfaces could only declare method signatures, and implementing classes were required to provide concrete implementations for all interface methods. Default methods provide a way to add new methods to interfaces without breaking existing implementations.</p>
+
+    <h2>Key Characteristics of Default Methods:</h2>
+    <ul>
+        <li><strong>Method Implementation:</strong> Default methods have method bodies and provide a default implementation for the method.</li>
+        <li><strong>Keyword:</strong> Default methods are defined using the <code>default</code> keyword followed by the method signature and implementation.</li>
+        <li><strong>Optional Override:</strong> Implementing classes can choose to override default methods if they want to provide their own implementations. If not overridden, the default implementation is used.</li>
+        <li><strong>Interface Evolution:</strong> Default methods were introduced to allow interfaces to evolve over time by adding new methods without breaking compatibility with existing classes that implement the interface.</li>
+    </ul>
+
+    <h2>Example of a Default Method:</h2>
+    <pre><code>
+interface MyInterface {
+    void regularMethod(); // Regular abstract method
+
+    // Default method with a default implementation
+    default void defaultMethod() {
+        System.out.println("This is a default method.");
+    }
+}
+
+class MyClass implements MyInterface {
+    @Override
+    public void regularMethod() {
+        System.out.println("This is the implementation of the regular method.");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        MyClass myObject = new MyClass();
+        myObject.regularMethod(); // Calls the overridden regular method
+        myObject.defaultMethod(); // Calls the default method
+    }
+}
+    </code></pre>
+
+    <p>In this example, the <code>MyInterface</code> interface defines a default method <code>defaultMethod()</code> with a default implementation. The <code>MyClass</code> class implements the interface and overrides the regular method <code>regularMethod()</code>. When we create an instance of <code>MyClass</code> and call methods, it demonstrates the use of the default method.</p>
+
+    <h2>Use Cases for Default Methods:</h2>
+    <p>Default methods are commonly used in Java libraries and APIs to add new methods to interfaces without breaking existing code. They are particularly useful when extending existing interfaces to accommodate new functionality while maintaining backward compatibility.</p>
+
+</body>
+</html>

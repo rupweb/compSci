@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparing Breadth-First Search and Depth-First Search</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h2>Overview</h2>
+    <p>Breadth-First Search (BFS) and Depth-First Search (DFS) are two fundamental algorithms used for searching or traversing through trees and graphs. While they have a similar goal, their approaches and applications differ significantly.</p>
+
+    <h2>Breadth-First Search (BFS)</h2>
+    <ul>
+        <li><strong>Approach:</strong> Explores the graph level by level, starting from the root node and moving outwards.</li>
+        <li><strong>Implementation:</strong> Typically implemented using a queue.</li>
+        <li><strong>Use Case:</strong> Ideal for finding the shortest path in unweighted graphs.</li>
+        <li><strong>Space Complexity:</strong> Can be higher than DFS, especially in dense graphs, because it stores all children of each node in memory.</li>
+    </ul>
+
+    <h2>Depth-First Search (DFS)</h2>
+    <ul>
+        <li><strong>Approach:</strong> Explores as far as possible along a branch before backtracking.</li>
+        <li><strong>Implementation:</strong> Commonly implemented using recursion or a stack.</li>
+        <li><strong>Use Case:</strong> Useful for pathfinding in scenarios where the solution is likely to be far from the root, and for topological sorting.</li>
+        <li><strong>Space Complexity:</strong> Generally lower than BFS, as it does not necessarily need to store all children of a node.</li>
+    </ul>
+
+    <h2>Key Differences</h2>
+    <table border="1">
+        <tr>
+            <th></th>
+            <th>Breadth-First Search</th>
+            <th>Depth-First Search</th>
+        </tr>
+        <tr>
+            <td><strong>Traversal Order</strong></td>
+            <td>Level by level</td>
+            <td>Branch by branch</td>
+        </tr>
+        <tr>
+            <td><strong>Data Structure</strong></td>
+            <td>Queue</td>
+            <td>Stack or Recursion</td>
+        </tr>
+        <tr>
+            <td><strong>Space Complexity</strong></td>
+            <td>Higher in dense graphs</td>
+            <td>Lower, particularly in sparse graphs</td>
+        </tr>
+        <tr>
+            <td><strong>Use Cases</strong></td>
+            <td>Shortest path, Closer solutions</td>
+            <td>Topological sorting, Farther solutions</td>
+        </tr>
+    </table>
+
+    <p>Both BFS and DFS have their unique strengths and weaknesses, and the choice between them depends on the specific requirements of the problem at hand.</p>
+</body>
+</html>

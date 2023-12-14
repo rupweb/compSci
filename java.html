@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <title>Hello, Java!</title>
+</head>
+<body>
+<!-- Questions -->
+    <div class="container mt-3">
+        <h2>Java Questions</h2>
+        <section class="basic">
+            <p>Basic Java Concepts:</p>
+            <button class="btn btn-link openAnswer" data-target="java1.html">Explain the difference between == and .equals() in Java</button><br>
+            <button class="btn btn-link openAnswer" data-target="java2.html">What is the purpose of the static keyword in Java?</button><br>
+            <button class="btn btn-link openAnswer" data-target="java3.html">Describe the differences between the final, finally, and finalize keywords</button><br>
+        </section>
+        <section class="oop">
+            <p>Object-Oriented Programming (OOP):</p>
+            <button class="btn btn-link openAnswer" data-target="java4.html">Define encapsulation and provide an example of how it is implemented in Java</button><br>
+            <button class="btn btn-link openAnswer" data-target="java5.html">Explain the concept of inheritance in Java. Provide an example</button><br>
+            <button class="btn btn-link openAnswer" data-target="java6.html">What is polymorphism? Provide an example in Java</button><br>
+        </section>
+        <section class="exceptions">
+            <p>Exception Handling:</p>
+            <button class="btn btn-link openAnswer" data-target="java7.html">Describe the try-catch-finally blocks in Java and their purpose</button><br>
+            <button class="btn btn-link openAnswer" data-target="java8.html">Explain the differences between checked and unchecked exceptions</button><br>
+            <button class="btn btn-link openAnswer" data-target="java9.html">How does the throw statement work in Java?</button><br>
+        </section>
+        <section class="collections">
+            <p>Collections Framework:</p>
+            <button class="btn btn-link openAnswer" data-target="java10.html">Differentiate between ArrayList and LinkedList in Java</button><br>
+            <button class="btn btn-link openAnswer" data-target="java11.html">Explain the purpose of the Map interface and provide examples of classes that implement it</button><br>
+            <button class="btn btn-link openAnswer" data-target="java12.html">Discuss the differences between HashSet and TreeSet</button><br>
+            <button class="btn btn-link openAnswer" data-target="java13.html">How does the enhanced for loop (for-each) work with collections?</button><br>
+        </section>
+        <section class="multithreading">
+            <p>Multithreading:</p>
+            <button class="btn btn-link openAnswer" data-target="java14.html">What is a thread? How is it different from a process?</button><br>
+            <button class="btn btn-link openAnswer" data-target="java15.html">Explain the synchronized keyword in Java and its use in multithreading</button><br>
+            <button class="btn btn-link openAnswer" data-target="java16.html">Discuss the volatile keyword in the context of multithreading</button><br>
+        </section>
+        <section class="io">
+            <p>Java I/O:</p>
+            <button class="btn btn-link openAnswer" data-target="java17.html">Explain the difference between FileReader and BufferedReader</button><br>
+            <button class="btn btn-link openAnswer" data-target="java18.html">How does serialization work in Java? Why might you use it?</button><br>
+            <button class="btn btn-link openAnswer" data-target="java19.html">Discuss the purpose of the java.nio package</button><br>
+        </section>
+        <section class="design">
+            <p>Design Patterns:</p>
+            <button class="btn btn-link openAnswer" data-target="java20.html">What is the Singleton design pattern? Provide an example of its implementation</button><br>
+            <button class="btn btn-link openAnswer" data-target="java21.html">Explain the Observer pattern and provide a scenario where it might be useful</button><br>
+            <button class="btn btn-link openAnswer" data-target="java22.html">Discuss the Builder pattern and its advantages</button><br>
+        </section>
+        <section class="memory">
+            <p>Memory Management:</p>
+            <button class="btn btn-link openAnswer" data-target="java23.html">What is the purpose of the garbage collector in Java?</button><br>
+            <button class="btn btn-link openAnswer" data-target="java24.html">Explain the difference between the stack and the heap in the context of memory allocation</button><br>
+            <button class="btn btn-link openAnswer" data-target="java25.html">How can you prevent memory leaks in Java?</button><br>
+        </section>
+            <section class="features">
+            <p>Java 8 Features:</p>
+            <button class="btn btn-link openAnswer" data-target="java26.html">What are lambda expressions in Java? Provide an example</button><br>
+            <button class="btn btn-link openAnswer" data-target="java27.html">Discuss the Stream API in Java 8 and its benefits</button><br>
+            <button class="btn btn-link openAnswer" data-target="java28.html">Explain the concept of default methods in interfaces</button><br>
+        </section>
+        <section class="database">
+            <p>Database Connectivity:</p>
+            <button class="btn btn-link openAnswer" data-target="java29.html">Explain the role of JDBC in Java</button><br>
+            <button class="btn btn-link openAnswer" data-target="java30.html">Discuss the differences between Statement and PreparedStatement in JDBC</button><br>
+            <button class="btn btn-link openAnswer" data-target="java31.html">How does connection pooling improve database performance in Java applications?</button><br>
+        </section>
+    </div>
+
+    <!-- Modal Structure -->
+    <div class="modal" id="answerModal">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Answer</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <!-- Answer content will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>    
+    <script>
+        $(document).ready(function(){
+            $(".openAnswer").click(function(){
+                var answerFile = $(this).data("target");
+                $("#answerModal .modal-body").load(answerFile, function(){
+                    $("#answerModal").modal('show');
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Try-Catch-Finally Blocks in Java</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <p>In Java, the try-catch-finally construct is a fundamental mechanism for handling exceptions (errors or unexpected events) that may occur during program execution. It allows you to gracefully handle exceptional situations and ensure that critical resources are properly managed.</p>
+
+    <h2>Components of the Try-Catch-Finally Block:</h2>
+    <ul>
+        <li><strong>Try Block:</strong> The code that may potentially throw an exception is placed inside the try block. If an exception occurs within this block, control is transferred to the catch block.</li>
+        <li><strong>Catch Block:</strong> The catch block contains code that handles specific types of exceptions. It specifies the exception type that it can catch and provides a way to respond to the exception, such as logging an error message or taking corrective action.</li>
+        <li><strong>Finally Block:</strong> The finally block is optional and is used to define code that must be executed regardless of whether an exception occurred or not. Common use cases include releasing resources (e.g., closing files or database connections) or performing cleanup tasks.</li>
+    </ul>
+
+    <h2>Purpose of Try-Catch-Finally:</h2>
+    <p>The primary purposes of try-catch-finally blocks in Java are:</p>
+    <ol>
+        <li><strong>Error Handling:</strong> To catch and handle exceptions gracefully, preventing the program from crashing due to unexpected errors.</li>
+        <li><strong>Resource Management:</strong> To ensure that critical resources, such as files or network connections, are properly released even in the presence of exceptions.</li>
+        <li><strong>Control Flow:</strong> To control the flow of program execution, allowing specific actions to be taken in response to different types of exceptions.</li>
+    </ol>
+
+    <h2>Example of Try-Catch-Finally:</h2>
+    <pre><code>
+try {
+    // Code that may throw an exception
+    int result = 10 / 0; // This will cause an ArithmeticException
+} catch (ArithmeticException e) {
+    // Exception handling
+    System.err.println("An error occurred: " + e.getMessage());
+} finally {
+    // Cleanup or resource release code
+    System.out.println("Finally block executed");
+}
+    </code></pre>
+
+    <p>In this example, the try block attempts to perform a division by zero operation, which raises an `ArithmeticException`. The catch block catches this exception and prints an error message. Finally, the finally block is executed regardless of whether an exception occurred, allowing for proper resource cleanup.</p>
+
+</body>
+</html>

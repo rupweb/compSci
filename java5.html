@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inheritance in Java</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <p>Inheritance is a core concept in object-oriented programming that allows one class (known as a subclass or child class) to inherit the attributes and methods of another class (referred to as a superclass or parent class). This mechanism promotes code reusability and establishes a hierarchical relationship between classes.</p>
+
+    <h2>Key Features of Inheritance:</h2>
+    <ul>
+        <li>Inheritance supports the concept of “is-a” relationship.</li>
+        <li>It enhances code reusability and readability.</li>
+        <li>Subclasses can add their own methods and variables in addition to the inherited ones.</li>
+        <li>Subclasses can also override inherited methods to provide specific implementation.</li>
+    </ul>
+
+    <h2>Example of Inheritance in Java:</h2>
+    <p>Consider a base class <code>Vehicle</code> and a derived class <code>Car</code> that inherits from <code>Vehicle</code>:</p>
+    
+    <pre><code>
+public class Vehicle {
+    protected String brand;
+
+    public void honk() {
+        System.out.println("Beep beep!");
+    }
+}
+
+public class Car extends Vehicle {
+    private int numberOfDoors;
+
+    public void display() {
+        System.out.println("Brand: " + brand + ", Doors: " + numberOfDoors);
+    }
+}
+    </code></pre>
+
+    <p>In this example, <code>Car</code> inherits from <code>Vehicle</code>. It means that <code>Car</code> can use the properties and methods of <code>Vehicle</code>, like the <code>brand</code> field and the <code>honk</code> method. The <code>Car</code> class also adds its own property (<code>numberOfDoors</code>) and method (<code>display</code>).</p>
+</body>
+</html>

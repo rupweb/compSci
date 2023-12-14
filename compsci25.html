@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Code: Sending Data from Machine A to Machine B</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h2>Machine A: Sender</h2>
+    <pre>
+        <code>
+import java.io.*;
+import java.net.Socket;
+
+public class MachineA {
+    public static void main(String[] args) {
+        try {
+            // Create a socket to connect to Machine B
+            Socket socket = new Socket("MachineB_IP", 12345); // Replace with Machine B's IP and port
+
+            // Create an output stream to send data to Machine B
+            OutputStream outputStream = socket.getOutputStream();
+            PrintWriter out = new PrintWriter(outputStream, true);
+
+            // Simulate sending a stream of data
+            for (int i = 1; i <= 10; i++) {
+                String data = "Data" + i;
+                out.println(data);
+                System.out.println("Sent: " + data);
+                Thread.sleep(1000); // Simulate delay between data points
+            }
+
+            // Close the socket
+            socket.close();
+        } catch (IOException | InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+}
+        </code>
+    </pre>
+
+    <h2>Machine B: Receiver</h2>
+    <pre>
+        <code>
+import java.io.*;
+import java.net.ServerSocket;
+import java.net.Socket;
+
+public class MachineB {
+    public static void main(String[] args) {
+        try {
+            // Create a server socket to listen for incoming connections
+            ServerSocket serverSocket = new ServerSocket(12345); // Use the same port as Machine A
+
+            // Accept incoming connections from Machine A
+            Socket socket = serverSocket.accept();
+
+            // Create an input stream to receive data from Machine A
+            InputStream inputStream = socket.getInputStream();
+            BufferedReader in = new BufferedReader(new InputStreamReader(inputStream));
+
+            // Read and process the incoming data stream
+            String data;
+            while ((data = in.readLine()) != null) {
+                System.out.println("Received: " + data);
+            }
+
+            // Close the socket and server socket
+            socket.close();
+            serverSocket.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+        </code>
+    </pre>
+</body>
+</html>

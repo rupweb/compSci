@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Difference Between TCP and UDP</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <p>TCP (Transmission Control Protocol) and UDP (User Datagram Protocol) are two of the most commonly used transport layer protocols in computer networks. They serve distinct purposes and have different characteristics that make them suitable for different types of applications.</p>
+
+    <h2>TCP (Transmission Control Protocol)</h2>
+    <ul>
+        <li><strong>Connection-Oriented:</strong> TCP is a connection-oriented protocol, meaning it establishes a connection between the sender and receiver before data transfer begins. It ensures reliable, ordered, and error-checked delivery of data.</li>
+        <li><strong>Reliability:</strong> TCP guarantees the delivery of data packets. If a packet is lost or corrupted during transmission, TCP will retransmit it, ensuring data integrity.</li>
+        <li><strong>Flow Control:</strong> TCP uses flow control mechanisms to prevent congestion and manage the rate of data transmission between sender and receiver.</li>
+        <li><strong>Ordering:</strong> TCP ensures that data packets are delivered in the same order they were sent, making it suitable for applications that require strict sequencing.</li>
+        <li><strong>Overhead:</strong> TCP has higher overhead due to the management of connections, error checking, and retransmissions.</li>
+        <li><strong>Examples:</strong> Common applications that use TCP include web browsing, email (SMTP, POP3, IMAP), file transfer (FTP), and remote desktop (RDP).</li>
+    </ul>
+
+    <h2>UDP (User Datagram Protocol)</h2>
+    <ul>
+        <li><strong>Connectionless:</strong> UDP is a connectionless protocol, meaning it does not establish a connection before data transfer. It is a "fire and forget" protocol.</li>
+        <li><strong>Reliability:</strong> UDP does not guarantee the delivery of data packets. It does not perform retransmissions, making it less reliable than TCP.</li>
+        <li><strong>Flow Control:</strong> UDP does not have built-in flow control mechanisms, so it can transmit data at a high rate without congestion control.</li>
+        <li><strong>Ordering:</strong> UDP does not ensure the order of packet delivery, so packets may arrive out of order.</li>
+        <li><strong>Overhead:</strong> UDP has lower overhead compared to TCP since it lacks the connection setup and error recovery mechanisms.</li>
+        <li><strong>Examples:</strong> Common applications that use UDP include real-time communication (VoIP, video conferencing), online gaming, DNS (Domain Name System), and streaming media.</li>
+    </ul>
+
+    <h2>Choosing Between TCP and UDP</h2>
+    <p>The choice between TCP and UDP depends on the specific requirements of an application. Use TCP when reliability, ordering, and error recovery are crucial. Use UDP when low latency and high-speed data transmission are more important, even if some data loss is acceptable.</p>
+
+    <h2>Conclusion</h2>
+    <p>TCP and UDP are both important transport layer protocols, each with its own strengths and weaknesses. Understanding their differences is essential for selecting the right protocol for a given application or use case.</p>
+</body>
+</html>

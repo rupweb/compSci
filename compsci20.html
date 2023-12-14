@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How HTTP Works and Differences Between HTTP and HTTPS</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h2>How HTTP Works</h2>
+    <p>HTTP (Hypertext Transfer Protocol) is the foundation of data communication on the World Wide Web. It defines a set of rules and conventions for web browsers and web servers to exchange information. Here's how HTTP works:</p>
+
+    <ol>
+        <li><strong>Client Request:</strong> When you enter a web address (URL) into your browser and press Enter, the browser sends an HTTP request to the web server hosting the requested website.</li>
+        <li><strong>Server Response:</strong> The web server processes the request and sends back an HTTP response. This response typically includes HTML, CSS, JavaScript, and other resources needed to render the web page.</li>
+        <li><strong>Rendering:</strong> The browser receives the response and renders the web page for you to view. It may make additional requests for images, stylesheets, and scripts referenced in the HTML.</li>
+        <li><strong>Interaction:</strong> You can interact with the web page by clicking links, submitting forms, and performing other actions. Each interaction involves sending new HTTP requests to the server.</li>
+    </ol>
+
+    <h2>Differences Between HTTP and HTTPS</h2>
+    <p>While HTTP is widely used for web communication, HTTPS (HTTP Secure) is a secure version of HTTP that incorporates encryption and authentication mechanisms. Here are the key differences:</p>
+
+    <h3>1. Data Encryption</h3>
+    <p><strong>HTTP:</strong> Data transferred over plain HTTP is not encrypted. This means that anyone with access to the network can intercept and view the data being exchanged, including sensitive information like login credentials or personal data.</p>
+    <p><strong>HTTPS:</strong> HTTPS uses encryption protocols like SSL/TLS to secure data in transit. This encryption makes it extremely difficult for unauthorized parties to intercept and decipher the data, enhancing security and privacy.</p>
+
+    <h3>2. Data Integrity</h3>
+    <p><strong>HTTP:</strong> HTTP does not guarantee data integrity during transmission. Data can be tampered with or modified by malicious actors during transit.</p>
+    <p><strong>HTTPS:</strong> HTTPS ensures data integrity by detecting any alterations or tampering with the transmitted data. If data is modified in transit, the connection is terminated to prevent data breaches.</p>
+
+    <h3>3. Authentication</h3>
+    <p><strong>HTTP:</strong> HTTP does not provide server authentication, making it vulnerable to man-in-the-middle attacks where attackers impersonate a server to intercept data.</p>
+    <p><strong>HTTPS:</strong> HTTPS uses digital certificates to authenticate the server's identity. This ensures that you are connecting to a legitimate server and not a malicious one, enhancing trust and security.</p>
+
+    <h3>4. URL Prefix</h3>
+    <p><strong>HTTP:</strong> URLs for HTTP websites start with "http://".</p>
+    <p><strong>HTTPS:</strong> URLs for HTTPS websites start with "https://".</p>
+
+    <h3>5. Port Numbers</h3>
+    <p><strong>HTTP:</strong> Default port number for HTTP is 80.</p>
+    <p><strong>HTTPS:</strong> Default port number for HTTPS is 443.</p>
+
+    <h2>Conclusion</h2>
+    <p>HTTP and HTTPS are protocols that facilitate data exchange on the web. While HTTP is the standard for web communication, HTTPS enhances security by encrypting data, ensuring integrity, and providing server authentication. It is essential to use HTTPS, especially for websites that handle sensitive information, to protect users' data and privacy.</p>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQL Query to Retrieve Data from Multiple Tables</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <p>In SQL, you can retrieve data from multiple tables using the JOIN operation. Here's an example query that retrieves data from two tables: "Orders" and "Customers."</p>
+
+    <h2>Example SQL Query</h2>
+    <pre>
+        <code>
+SELECT Orders.OrderID, Customers.CustomerName, Orders.OrderDate
+FROM Orders
+INNER JOIN Customers ON Orders.CustomerID = Customers.CustomerID;
+        </code>
+    </pre>
+
+    <p>This query selects data from the "Orders" table and the "Customers" table and joins them using the "CustomerID" column. It retrieves the "OrderID," "CustomerName," and "OrderDate" columns from both tables for matching records.</p>
+
+    <h2>Explanation</h2>
+    <p>The query uses the following SQL components:</p>
+    <ul>
+        <li><strong>SELECT:</strong> Specifies the columns to retrieve.</li>
+        <li><strong>FROM:</strong> Specifies the tables to retrieve data from ("Orders" and "Customers").</li>
+        <li><strong>INNER JOIN:</strong> Performs an inner join operation, matching records with the same "CustomerID" in both tables.</li>
+        <li><strong>ON:</strong> Specifies the condition for the join, matching records based on the "CustomerID" column.</li>
+    </ul>
+
+    <p>The result of this query will include data from both tables, combining information about orders and customer names for matching records.</p>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serialization in Java</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <p>Serialization in Java is the process of converting an object's state into a byte stream, allowing the object to be easily saved to a file, transmitted over a network, or stored in a database. Deserialization is the reverse process, where the byte stream is converted back into an object's state.</p>
+
+    <h2>How Serialization Works:</h2>
+    <ul>
+        <li><strong>Serializable Interface:</strong> To make an object serializable, the class must implement the <code>Serializable</code> interface. This interface acts as a marker, indicating that the object can be serialized.</li>
+        <li><strong>ObjectOutputStream:</strong> To serialize an object, you create an <code>ObjectOutputStream</code> and write the object to it. The object's state is converted into a byte stream and can be saved to a file or transmitted.</li>
+        <li><strong>ObjectInputStream:</strong> To deserialize an object, you create an <code>ObjectInputStream</code> and read the byte stream. The byte stream is converted back into an object, allowing you to work with it in memory.</li>
+    </ul>
+
+    <h2>Why Use Serialization:</h2>
+    <p>Serialization serves several purposes in Java:</p>
+    <ul>
+        <li><strong>Persistence:</strong> You can save the state of an object to a file and load it later, allowing data to persist between program executions.</li>
+        <li><strong>Network Communication:</strong> Objects can be serialized and sent over a network to communicate between different Java applications or systems.</li>
+        <li><strong>Caching:</strong> Serialization is used in caching mechanisms to store and retrieve objects efficiently.</li>
+        <li><strong>Distributed Computing:</strong> In distributed systems, serialized objects are exchanged between nodes for processing.</li>
+        <li><strong>Deep Copy:</strong> Serialization allows you to create a deep copy of an object by serializing it and then deserializing it, effectively cloning the object.</li>
+    </ul>
+
+    <h2>Example:</h2>
+    <pre><code>
+import java.io.*;
+
+public class SerializationExample {
+    public static void main(String[] args) {
+        // Serialize an object
+        try {
+            // Create an object
+            MyClass obj = new MyClass("John", 25);
+
+            // Serialize the object to a file
+            ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream("object.ser"));
+            outputStream.writeObject(obj);
+            outputStream.close();
+
+            System.out.println("Object serialized successfully.");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        // Deserialize an object
+        try {
+            // Read the object from the file
+            ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream("object.ser"));
+            MyClass newObj = (MyClass) inputStream.readObject();
+            inputStream.close();
+
+            System.out.println("Deserialized Object: " + newObj.getName() + ", " + newObj.getAge());
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+class MyClass implements Serializable {
+    private String name;
+    private int age;
+
+    public MyClass(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+}
+    </code></pre>
+
+    <p>In this example, an object of the class <code>MyClass</code> is serialized to a file and then deserialized back into memory. Serialization allows the object to be saved and loaded.</p>
+
+</body>
+</html>

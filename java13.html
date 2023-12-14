@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Enhanced For Loop (for-each) in Java</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<p>The enhanced for loop, also known as the for-each loop, is a convenient and concise way to iterate through elements in a collection or an array in Java. It simplifies the process of iterating and eliminates the need for explicit indexing.</p>
+
+<h2>Syntax of the Enhanced For Loop:</h2>
+<pre><code>
+for (elementType element : collection) {
+// Code to be executed for each element
+}
+</code></pre>
+
+<p>Where:</p>
+<ul>
+    <li><code>elementType</code>: The data type of elements in the collection.</li>
+    <li><code>element</code>: A variable that represents each element in the collection during each iteration.</li>
+    <li><code>collection</code>: The collection (or array) to be iterated through.</li>
+</ul>
+
+<h2>How the Enhanced For Loop Works with Collections:</h2>
+<ul>
+    <li>The enhanced for loop iterates through each element in the collection sequentially.</li>
+    <li>During each iteration, the current element is assigned to the variable specified in the loop header (e.g., <code>element</code> in the syntax).</li>
+    <li>The loop executes the specified code block for each element in the collection.</li>
+    <li>Once all elements have been processed, the loop terminates automatically.</li>
+</ul>
+
+<h2>Benefits of Using the Enhanced For Loop:</h2>
+<ul>
+    <li>It simplifies the code and eliminates the need for explicit indexing or iterators.</li>
+    <li>It reduces the chances of off-by-one errors when iterating through collections.</li>
+    <li>It enhances code readability by making the iteration process more intuitive.</li>
+</ul>
+
+<h2>Example with ArrayList:</h2>
+<pre><code>
+import java.util.ArrayList;
+import java.util.List;
+
+public class ForEachExample {
+public static void main(String[] args) {
+    List&lt;String&gt; fruits = new ArrayList&lt;&gt;();
+    fruits.add("Apple");
+    fruits.add("Banana");
+    fruits.add("Cherry");
+
+    // Using the enhanced for loop to iterate through the list
+    for (String fruit : fruits) {
+        System.out.println("Fruit: " + fruit);
+    }
+}
+}
+</code></pre>
+
+<p>In this example, an `ArrayList` is used to store a list of fruits. The enhanced for loop is used to iterate through the list and print each fruit's name.</p>
+
+</body>
+</html>

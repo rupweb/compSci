@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Understanding Hash Tables</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h2>How Hash Tables Work</h2>
+    <p>A hash table is a data structure that stores key-value pairs. It uses a hash function to compute an index into an array of buckets or slots, from which the desired value can be found.</p>
+    <ol>
+        <li>When storing a key-value pair, the key is passed through a hash function.</li>
+        <li>The hash function calculates an index based on the key and returns an index where this key-value pair should be stored.</li>
+        <li>If more than one key hashes to the same index, a collision occurs. To handle collisions, hash tables use methods like chaining (where each bucket is a linked list of entries that hash to the same index).</li>
+        <li>When retrieving a value, the key is passed through the hash function to find the correct index.</li>
+        <li>The value corresponding to the key can be found at the index or within the linked list at that index.</li>
+    </ol>
+
+    <h2>Advantages of Hash Tables</h2>
+    <ul>
+        <li><strong>Efficient Data Retrieval:</strong> Provides average-case constant time complexity (O(1)) for searching, insertion, and deletion.</li>
+        <li><strong>Flexibility in Key Types:</strong> Can handle a wide variety of key types, anything that can be hashed.</li>
+        <li><strong>Direct Addressing:</strong> Keys are mapped directly to indexes for quick access.</li>
+        <li><strong>Scalability:</strong> Can handle a large number of key-value pairs efficiently.</li>
+    </ul>
+
+    <h2>Considerations</h2>
+    <p>While hash tables are highly efficient, they require a good hash function to minimize collisions. Poorly designed hash functions can lead to clustering and uneven distribution, which can degrade performance to O(n) in the worst case.</p>
+</body>
+</html>

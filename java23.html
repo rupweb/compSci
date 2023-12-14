@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Purpose of the Garbage Collector in Java</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <p>The garbage collector in Java is a vital component of the Java Virtual Machine (JVM) responsible for automatic memory management. Its primary purpose is to automatically reclaim memory that is no longer in use by the program, freeing up resources and preventing memory leaks.</p>
+
+    <h2>Key Purposes of the Garbage Collector:</h2>
+    <ul>
+        <li><strong>Memory Management:</strong> The garbage collector tracks and manages memory allocation, ensuring that objects are allocated memory when needed and freeing memory when objects are no longer reachable.</li>
+        <li><strong>Preventing Memory Leaks:</strong> It prevents memory leaks by identifying and collecting objects that are no longer referenced by the program, thus making the memory available for reuse.</li>
+        <li><strong>Automatic Cleanup:</strong> Developers do not need to explicitly deallocate memory, unlike in languages like C or C++. The garbage collector handles memory cleanup automatically.</li>
+        <li><strong>Optimizing Performance:</strong> By efficiently reclaiming memory, the garbage collector helps maintain the performance of Java applications by minimizing memory fragmentation and reducing the frequency of manual memory management tasks.</li>
+    </ul>
+
+    <h2>How the Garbage Collector Works:</h2>
+    <p>The garbage collector uses various algorithms to identify and collect unreferenced objects. These algorithms include reference counting, mark-and-sweep, and generational garbage collection. It analyzes the object graph to determine which objects are reachable and which are not.</p>
+
+    <h2>Garbage Collection Cycle:</h2>
+    <ol>
+        <li><strong>Mark:</strong> The garbage collector starts by marking all objects that are reachable from the program's roots (e.g., local variables, static variables, and method call stacks).</li>
+        <li><strong>Sweep:</strong> It then sweeps through the memory, identifying and removing objects that were not marked as reachable. These unreferenced objects are considered garbage.</li>
+        <li><strong>Compact (optional):</strong> Some garbage collectors also include a compaction step where memory fragmentation is reduced by compacting live objects to a contiguous block of memory.</li>
+    </ol>
+
+    <h2>Configuring Garbage Collection:</h2>
+    <p>Java provides options to configure the behavior of the garbage collector, allowing developers to choose different garbage collection strategies based on the application's requirements. Popular garbage collectors in Java include the G1 Garbage Collector, CMS Garbage Collector, and others.</p>
+
+</body>
+</html>

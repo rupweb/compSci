@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polymorphism in Java</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <p>Polymorphism is a fundamental concept in object-oriented programming. It describes a paradigm in which a method can have multiple implementations depending on the object that invokes it. In simple terms, polymorphism allows objects of different classes to be treated as objects of a common superclass.</p>
+
+    <h2>Types of Polymorphism:</h2>
+    <ul>
+        <li><strong>Compile-time Polymorphism:</strong> Achieved through method overloading.</li>
+        <li><strong>Runtime Polymorphism:</strong> Achieved through method overriding, where the method to be invoked is determined at runtime.</li>
+    </ul>
+
+    <h2>Example of Polymorphism in Java:</h2>
+    <p>Consider an example with a superclass <code>Animal</code> and its subclasses <code>Dog</code> and <code>Cat</code>, each with their own implementation of the <code>makeSound</code> method:</p>
+    
+    <pre><code>
+public class Animal {
+    public void makeSound() {
+        System.out.println("Some sound");
+    }
+}
+
+public class Dog extends Animal {
+    public void makeSound() {
+        System.out.println("Bark");
+    }
+}
+
+public class Cat extends Animal {
+    public void makeSound() {
+        System.out.println("Meow");
+    }
+}
+
+public class TestPolymorphism {
+    public static void main(String[] args) {
+        Animal myDog = new Dog();
+        Animal myCat = new Cat();
+        myDog.makeSound();  // Outputs "Bark"
+        myCat.makeSound();  // Outputs "Meow"
+    }
+}
+    </code></pre>
+
+    <p>In this example, both <code>Dog</code> and <code>Cat</code> are subclasses of <code>Animal</code>. Each subclass provides its own implementation of the <code>makeSound</code> method. Through polymorphism, an <code>Animal</code> reference can be used to invoke <code>makeSound</code>, and the correct version of the method (depending on whether the object is a <code>Dog</code> or a <code>Cat</code>) is called at runtime.</p>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stack vs. Heap Memory Allocation in Java</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <p>In Java, memory allocation is divided into two main areas: the stack and the heap. These areas serve different purposes and have distinct characteristics.</p>
+
+    <h2>Stack Memory:</h2>
+    <ul>
+        <li><strong>Scope and Lifetime:</strong> Stack memory is used for storing local variables and method call information. Variables declared within a method have a limited scope and lifetime within that method.</li>
+        <li><strong>Size:</strong> Stack memory is typically smaller in size compared to heap memory.</li>
+        <li><strong>Fast Access:</strong> Accessing variables in the stack is faster because it involves simple pointer manipulation.</li>
+        <li><strong>Automatic Cleanup:</strong> Memory allocated on the stack is automatically deallocated when the variable goes out of scope or when the method returns, making it less prone to memory leaks.</li>
+        <li><strong>Used for:</strong> It is primarily used for managing method call frames, local variables, and function call execution.</li>
+    </ul>
+
+    <h2>Heap Memory:</h2>
+    <ul>
+        <li><strong>Scope and Lifetime:</strong> Heap memory is used for dynamic memory allocation, and objects created in the heap have a longer lifetime. They exist until they are explicitly deallocated or no longer referenced.</li>
+        <li><strong>Size:</strong> Heap memory is typically larger and more flexible in size compared to stack memory.</li>
+        <li><strong>Slower Access:</strong> Accessing variables in the heap is relatively slower because it involves traversing references and may require garbage collection.</li>
+        <li><strong>Manual Cleanup:</strong> Memory allocated in the heap must be explicitly released by the programmer when it is no longer needed, or it may result in memory leaks.</li>
+        <li><strong>Used for:</strong> It is used for creating objects with a longer lifetime, such as instances of classes and data structures.</li>
+    </ul>
+
+    <h2>Key Takeaways:</h2>
+    <p>Understanding the difference between stack and heap memory allocation is crucial for efficient memory management in Java. Stack memory is suitable for short-lived variables and method call frames, while heap memory is used for objects with longer lifetimes. Developers must be mindful of memory allocation and deallocation to prevent memory-related issues.</p>
+
+</body>
+</html>

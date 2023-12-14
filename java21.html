@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Observer Design Pattern in Java</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <p>The Observer design pattern is a behavioral design pattern that defines a one-to-many relationship between objects. In this pattern, one object (the subject) maintains a list of its dependents (observers) and notifies them of any state changes, typically by calling one of their methods. This allows the observers to stay synchronized with the subject's state.</p>
+
+    <h2>Key Components:</h2>
+    <ul>
+        <li><strong>Subject:</strong> The subject is the object being observed. It maintains a list of observers and notifies them of changes in its state.</li>
+        <li><strong>Observer:</strong> Observers are objects that want to be notified when the subject's state changes. They implement an interface or extend a class that defines the update method.</li>
+    </ul>
+
+    <h2>Scenario Example:</h2>
+    <p>Imagine a stock market monitoring application in Java where the Observer pattern can be useful. In this scenario:</p>
+    <ul>
+        <li>The <strong>StockMarket</strong> class serves as the subject. It tracks various stock prices and indices.</li>
+        <li>Multiple instances of the <strong>StockListener</strong> class act as observers. Each <strong>StockListener</strong> is interested in specific stocks or indices and wants to be notified when their prices change.</li>
+        <li>When a stock's price changes in the <strong>StockMarket</strong>, it notifies all registered <strong>StockListener</strong> instances of the change.</li>
+        <li>Each <strong>StockListener</strong> can then update its display or take any relevant action based on the new stock price.</li>
+    </ul>
+
+    <h2>Example Code:</h2>
+    <pre><code>
+import java.util.ArrayList;
+import java.util.List;
+
+// Subject
+class StockMarket {
+    private List<StockListener> observers = new ArrayList<>();
+    private String stockName;
+    private double stockPrice;
+
+    public void addObserver(StockListener observer) {
+        observers.add(observer);
+    }
+
+    public void removeObserver(StockListener observer) {
+        observers.remove(observer);
+    }
+
+    public void setStockPrice(String stockName, double price) {
+        this.stockName = stockName;
+        this.stockPrice = price;
+        notifyObservers();
+    }
+
+    private void notifyObservers() {
+        for (StockListener observer : observers) {
+            observer.update(stockName, stockPrice);
+        }
+    }
+}
+
+// Observer
+interface StockListener {
+    void update(String stockName, double price);
+}
+
+class Investor implements StockListener {
+    private String name;
+
+    public Investor(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public void update(String stockName, double price) {
+        System.out.println(name + " received an update: " + stockName + " price is now $" + price);
+    }
+}
+
+public class ObserverPatternExample {
+    public static void main(String[] args) {
+        StockMarket stockMarket = new StockMarket();
+
+        Investor investor1 = new Investor("Alice");
+        Investor investor2 = new Investor("Bob");
+
+        stockMarket.addObserver(investor1);
+        stockMarket.addObserver(investor2);
+
+        stockMarket.setStockPrice("XYZ", 100.0);
+        stockMarket.setStockPrice("ABC", 75.5);
+    }
+}
+    </code></pre>
+
+    <p>In this example, the <strong>StockMarket</strong> acts as the subject, and <strong>Investor</strong> instances act as observers. When the stock prices change, the <strong>StockMarket</strong> notifies the registered observers, and each investor receives updates about the stock prices they are interested in.</p>
+
+</body>
+</html>

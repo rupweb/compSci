@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysis of Time and Space Complexity</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h2>Time Complexity</h2>
+    <p>The time complexity of the solution can be analyzed separately for Machine A (sender) and Machine B (receiver).</p>
+
+    <h3>Machine A (Sender):</h3>
+    <ul>
+        <li>The for loop in Machine A runs for a fixed number of iterations (10 in this case), regardless of the input size.</li>
+        <li>Inside the loop, sending data over the network using sockets has a constant time complexity, O(1), as it does not depend on the input size.</li>
+        <li>Therefore, the time complexity of Machine A's code is O(1) with respect to the input size.</li>
+    </ul>
+
+    <h3>Machine B (Receiver):</h3>
+    <ul>
+        <li>The while loop in Machine B continues to read and process incoming data until the connection is closed or an error occurs.</li>
+        <li>The time complexity of reading and processing data from the network depends on the rate at which data arrives and the size of each data packet.</li>
+        <li>In the worst case, if data arrives continuously and Machine B processes it immediately, the time complexity can be considered as O(n), where n is the total amount of data received.</li>
+        <li>However, if there are delays or Machine B performs additional processing on each data item, the time complexity may vary.</li>
+    </ul>
+
+    <h2>Space Complexity</h2>
+    <p>The space complexity of the solution is primarily determined by the memory used by the programs on Machine A and Machine B.</p>
+
+    <ul>
+        <li>The space complexity for both Machine A and Machine B is minimal and can be considered as O(1) because they use a constant amount of memory for socket communication and data storage, regardless of the input size.</li>
+        <li>Additional memory may be used for buffers or data storage, but it is typically limited and does not depend on the input size.</li>
+    </ul>
+
+    <h2>Conclusion</h2>
+    <p>The time complexity of the solution varies between O(1) for Machine A (sender) and O(n) for Machine B (receiver), depending on the rate and size of incoming data. The space complexity for both machines is O(1), as they use a constant amount of memory for communication and data storage.</p>
+</body>
+</html>

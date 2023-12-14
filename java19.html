@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purpose of the java.nio Package</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <p>The <code>java.nio</code> package, which stands for "New I/O," provides a powerful and efficient framework for performing input and output operations. It was introduced in Java to address some of the limitations and performance issues associated with the older <code>java.io</code> package.</p>
+
+    <h2>Key Purposes of the java.nio Package:</h2>
+    <ul>
+        <li><strong>Non-Blocking I/O:</strong> One of the primary purposes of the <code>java.nio</code> package is to support non-blocking I/O operations, allowing applications to efficiently handle multiple I/O operations simultaneously without blocking the execution of other tasks. This is achieved through the use of channels and selectors.</li>
+        <li><strong>Buffered I/O:</strong> The package introduces the concept of buffers, which are efficient containers for data. Buffers can be used for reading data from sources and writing data to destinations with improved performance.</li>
+        <li><strong>Channels:</strong> The <code>java.nio.channels</code> package provides a variety of channel types for working with different types of I/O sources, including files, sockets, and more. Channels offer enhanced capabilities over traditional streams, such as non-blocking behavior.</li>
+        <li><strong>Selectors:</strong> The <code>java.nio.channels</code> package also includes selectors, which allow an application to monitor multiple channels for I/O events and efficiently manage a large number of connections without the need for one thread per connection.</li>
+        <li><strong>Memory-Mapped Files:</strong> Java NIO supports memory-mapped files, which enable the direct mapping of a file's contents into memory. This can improve performance for certain types of I/O operations, especially in scenarios where data needs to be read or written in chunks.</li>
+        <li><strong>Scalability:</strong> The package is designed with scalability in mind, making it suitable for building high-performance network servers, file processing applications, and more, where efficient I/O is essential.</li>
+    </ul>
+
+    <h2>Example:</h2>
+    <p>An example use case of the <code>java.nio</code> package is implementing a high-performance network server that can handle multiple client connections concurrently using channels and selectors. This allows the server to efficiently manage I/O operations without creating a thread for each client connection.</p>
+
+</body>
+</html>

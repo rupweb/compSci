@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <title>Hello, compSci!</title>
+</head>
+<body>
+    <!-- Questions -->
+        <div class="container mt-3">
+            <h2>Computer science Questions</h2>
+            <section class="algorithm">
+                <p>Algorithm and Data Structures:</p>
+                <button class="btn btn-link openAnswer" data-target="compsci1.html">Explain the time complexity of the quicksort algorithm</button><br>
+                <button class="btn btn-link openAnswer" data-target="compsci2.html">Describe how a hash table works and its advantages</button><br>
+                <button class="btn btn-link openAnswer" data-target="compsci3.html">Implement a binary search tree and its operations</button><br>
+                <button class="btn btn-link openAnswer" data-target="compsci4.html">Discuss the differences between breadth-first search and depth-first search</button><br>
+            </section>
+            <section class="programming">
+                <p>Programming and Software Engineering:</p>
+                <button class="btn btn-link openAnswer" data-target="compsci5.html">Write a program to reverse a linked list</button><br>
+                <button class="btn btn-link openAnswer" data-target="compsci6.html">Explain the principles of object-oriented programming</button><br>
+                <button class="btn btn-link openAnswer" data-target="compsci7.html">Discuss the importance of version control in software development</button><br>
+                <button class="btn btn-link openAnswer" data-target="compsci8.html">Describe the benefits of using design patterns in software development</button><br>
+            </section>
+            <section class="databases">
+                <p>Databases:</p>
+                <button class="btn btn-link openAnswer" data-target="compsci9.html">Explain the differences between SQL and NoSQL databases</button><br>
+                <button class="btn btn-link openAnswer" data-target="compsci10.html">Design a database schema for a social networking platform</button><br>
+                <button class="btn btn-link openAnswer" data-target="compsci11.html">Discuss the advantages and disadvantages of normalization in database design</button><br>
+                <button class="btn btn-link openAnswer" data-target="compsci12.html">Write a SQL query to retrieve data from multiple tables</button><br>
+            </section>
+            <section class="os">
+                <p>Operating Systems:</p>
+                <button class="btn btn-link openAnswer" data-target="compsci13.html">Explain the purpose of an operating system</button><br>
+                <button class="btn btn-link openAnswer" data-target="compsci14.html">Discuss the differences between a process and a thread</button><br>
+                <button class="btn btn-link openAnswer" data-target="compsci15.html">Describe how virtual memory works</button><br>
+                <button class="btn btn-link openAnswer" data-target="compsci16.html">Explain the role of the file system in an operating system</button><br>
+            </section>
+            <section class="networks">
+                <p>Computer Networks:</p>
+                <button class="btn btn-link openAnswer" data-target="compsci17.html">Describe the OSI model and its layers</button><br>
+                <button class="btn btn-link openAnswer" data-target="compsci18.html">Explain the difference between TCP and UDP</button><br>
+                <button class="btn btn-link openAnswer" data-target="compsci19.html">Discuss the purpose of DNS in computer networks</button><br>
+                <button class="btn btn-link openAnswer" data-target="compsci20.html">Describe how HTTP works and the differences between HTTP and HTTPS</button><br>
+            </section>
+            <section class="computation">
+                <p>Theory of Computation:</p>
+                <button class="btn btn-link openAnswer" data-target="compsci21.html">Explain the concept of regular languages and regular expressions</button><br>
+                <button class="btn btn-link openAnswer" data-target="compsci22.html">Discuss the Turing machine and its significance in computation</button><br>
+                <button class="btn btn-link openAnswer" data-target="compsci23.html">Explain the difference between decidability and computability</button><br>
+                <button class="btn btn-link openAnswer" data-target="compsci24.html">Discuss the P vs NP problem</button><br>
+            </section>
+            <section class="coding">
+                <p>Coding and Problem Solving:</p>
+                <button class="btn btn-link openAnswer" data-target="compsci25.html">Solve a coding problem on a whiteboard or online coding platform</button><br>
+                <button class="btn btn-link openAnswer" data-target="compsci26.html">Analyze the time and space complexity of your solution</button><br>
+                <button class="btn btn-link openAnswer" data-target="compsci27.html">Discuss alternative approaches to solving the problem</button><br>
+            </section>
+            <section class="research">
+                <p>Research and Publications:</p>
+                <button class="btn btn-link openAnswer" data-target="compsci28.html">Discuss any research projects you have worked on</button><br>
+                <button class="btn btn-link openAnswer" data-target="compsci29.html">Explain the significance of a specific research paper in your field</button><br>
+                <button class="btn btn-link openAnswer" data-target="compsci30.html">Describe any publications or contributions you have made to the field of computer science</button><br>
+        </div>
+    
+        <!-- Modal Structure -->
+        <div class="modal" id="answerModal">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Answer</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- Answer content will be loaded here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>    
+        <script>
+            $(document).ready(function(){
+                $(".openAnswer").click(function(){
+                    var answerFile = $(this).data("target");
+                    $("#answerModal .modal-body").load(answerFile, function(){
+                        $("#answerModal").modal('show');
+                    });
+                });
+            });
+        </script>
+    
+    </body>
+    </html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encapsulation in Java</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <p>Encapsulation is a fundamental concept in object-oriented programming that involves bundling the data (variables) and code (methods) that operates on the data into a single unit, known as an object. It also restricts direct access to some of an object's components, which is a means of preventing accidental interference and misuse of the methods and data.</p>
+
+    <h2>Key Points of Encapsulation:</h2>
+    <ul>
+        <li>Encapsulation can be achieved by declaring the class variables as private and providing public setter and getter methods to modify and view the variables' values.</li>
+        <li>This approach allows for controlled access to the data, as the class methods can enforce checks and balances on the data.</li>
+    </ul>
+
+    <h2>Example of Encapsulation in Java:</h2>
+    <pre><code>
+public class Person {
+    private String name;
+    private int age;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String newName) {
+        name = newName;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int newAge) {
+        if (newAge > 0) {
+            age = newAge;
+        }
+    }
+}
+    </code></pre>
+
+    <p>In this example, the <code>Person</code> class has two private fields (<code>name</code> and <code>age</code>) and public methods to get and set these fields. This ensures that the fields cannot be directly accessed from outside the class, and all access is controlled through the methods.</p>
+
+</body>
+</html>

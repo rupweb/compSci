@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Map Interface in Java</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <p>The `Map` interface in Java is part of the Java Collections Framework and is used to store and manipulate key-value pairs. Each key is associated with a unique value, allowing efficient retrieval and modification of data based on the key. The `Map` interface is widely used in various Java applications for tasks such as data storage, caching, and indexing.</p>
+
+    <h2>Purpose of the Map Interface:</h2>
+    <ul>
+        <li><strong>Key-Value Storage:</strong> The primary purpose of the `Map` interface is to store key-value pairs, where each key maps to a corresponding value. This allows efficient data retrieval based on keys.</li>
+        <li><strong>Efficient Search and Access:</strong> Maps provide efficient lookup and access to values using their associated keys. This makes it suitable for scenarios where fast access to data is required.</li>
+        <li><strong>Data Organization:</strong> Maps are used to organize data in a structured way, allowing for easy storage and retrieval of information.</li>
+        <li><strong>Common Use Cases:</strong> Maps are used in applications such as database systems, caching mechanisms, configuration management, and more.</li>
+    </ul>
+
+    <h2>Common Implementations of the Map Interface:</h2>
+    <p>Java provides several classes that implement the `Map` interface, each with its own characteristics and use cases. Some common implementations include:</p>
+
+    <ul>
+        <li><strong>HashMap:</strong> `HashMap` is a widely used implementation of the `Map` interface. It provides fast and efficient lookup of key-value pairs. It does not guarantee any specific order of elements.</li>
+        <li><strong>TreeMap:</strong> `TreeMap` is a sorted implementation of `Map`. It maintains elements in sorted order based on the natural order of keys or a specified comparator.</li>
+        <li><strong>LinkedHashMap:</strong> `LinkedHashMap` is similar to `HashMap` but maintains the order of elements based on the insertion order.</li>
+        <li><strong>HashTable:</strong> `HashTable` is an older implementation of `Map` that is synchronized, making it thread-safe but potentially slower than `HashMap`.</li>
+        <li><strong>ConcurrentHashMap:</strong> `ConcurrentHashMap` is designed for concurrent access and provides high-performance concurrent operations.</li>
+    </ul>
+
+    <h2>Example:</h2>
+    <pre><code>
+// Creating and using a HashMap
+Map&lt;String, Integer&gt; studentScores = new HashMap&lt;&gt;();
+studentScores.put("Alice", 95);
+studentScores.put("Bob", 87);
+studentScores.put("Charlie", 92);
+
+// Retrieving a value by key
+int aliceScore = studentScores.get("Alice"); // Retrieves the value 95
+
+// Iterating through the map
+for (Map.Entry&lt;String, Integer&gt; entry : studentScores.entrySet()) {
+    String name = entry.getKey();
+    int score = entry.getValue();
+    System.out.println(name + ": " + score);
+}
+    </code></pre>
+
+    <p>In this example, a `HashMap` is used to store student scores. Each student's name is a key, and their score is the corresponding value. The map allows efficient retrieval of scores based on the student's name.</p>
+
+</body>
+</html>

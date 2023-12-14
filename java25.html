@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preventing Memory Leaks in Java</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <p>A memory leak in Java occurs when objects are no longer needed but still occupy memory, causing excessive memory usage and potentially leading to performance issues. To prevent memory leaks in Java, developers can follow several best practices:</p>
+
+    <h2>1. Properly Manage Object References:</h2>
+    <ul>
+        <li><strong>Nullify References:</strong> Set object references to null when they are no longer needed. This allows the garbage collector to reclaim memory occupied by unreferenced objects.</li>
+        <li><strong>Use Weak References:</strong> Use weak references (e.g., WeakReference) when you want to maintain references to objects that can be garbage-collected when no strong references exist.</li>
+    </ul>
+
+    <h2>2. Close Resources:</h2>
+    <ul>
+        <li><strong>Close Streams:</strong> Ensure that input and output streams, file handles, and database connections are properly closed when they are no longer needed. Use try-with-resources or finally blocks for resource cleanup.</li>
+    </ul>
+
+    <h2>3. Be Cautious with Singleton Patterns:</h2>
+    <ul>
+        <li><strong>Use Lazy Initialization:</strong> If you implement a Singleton pattern, use lazy initialization to create the instance only when it is first needed. Avoid creating it unnecessarily.</li>
+    </ul>
+
+    <h2>4. Clear Collections:</h2>
+    <ul>
+        <li><strong>Clear Collections:</strong> When you no longer need elements in a collection (e.g., ArrayList), use the clear() method to remove references to objects. This allows the objects to be garbage-collected.</li>
+    </ul>
+
+    <h2>5. Avoid Circular References:</h2>
+    <ul>
+        <li><strong>Avoid Circular References:</strong> Be cautious when creating object hierarchies that involve circular references. Ensure that objects are properly disconnected when they are no longer needed.</li>
+    </ul>
+
+    <h2>6. Use Profiling Tools:</h2>
+    <ul>
+        <li><strong>Use Profiling Tools:</strong> Employ memory profiling tools like VisualVM or YourKit to identify memory leaks in your application. These tools can help you pinpoint the source of leaks.</li>
+    </ul>
+
+    <h2>7. Regularly Test and Monitor:</h2>
+    <ul>
+        <li><strong>Regularly Test and Monitor:</strong> Perform regular testing and monitoring of your application's memory usage. Implement automated tests to catch memory leaks early in the development process.</li>
+    </ul>
+
+    <p>By following these best practices and being diligent in managing object references and resources, developers can effectively prevent memory leaks in Java applications, ensuring efficient memory usage and optimal performance.</p>
+
+</body>
+</html>

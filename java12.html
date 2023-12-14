@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HashSet vs. TreeSet in Java</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <p>In Java, both `HashSet` and `TreeSet` are implementations of the `Set` interface, used for storing a collection of unique elements. However, they differ in their internal data structures, ordering, and performance characteristics.</p>
+
+    <h2>HashSet:</h2>
+    <ul>
+        <li><strong>Internal Data Structure:</strong> `HashSet` uses a hash table (or hash map) to store elements. Elements are stored based on their hash codes, which allows for efficient storage and retrieval.</li>
+        <li><strong>Ordering:</strong> `HashSet` does not guarantee any specific order of elements. The order of elements may vary and is not based on their natural order.</li>
+        <li><strong>Performance:</strong> `HashSet` provides fast average-case performance for basic operations like adding, removing, and checking for the existence of elements (O(1) on average).</li>
+        <li><strong>Use Cases:</strong> Use `HashSet` when you need a collection of unique elements and order does not matter. It is suitable for most cases where you need efficient set operations.</li>
+    </ul>
+
+    <h2>TreeSet:</h2>
+    <ul>
+        <li><strong>Internal Data Structure:</strong> `TreeSet` uses a self-balancing binary search tree (usually a Red-Black Tree) to store elements. Elements are sorted based on their natural order or a provided comparator.</li>
+        <li><strong>Ordering:</strong> `TreeSet` guarantees a specific order of elements, either in natural order (e.g., ascending for numbers) or a custom order specified by a comparator.</li>
+        <li><strong>Performance:</strong> `TreeSet` provides slower average-case performance for basic operations compared to `HashSet`. Basic operations are O(log n) on average due to the tree structure.</li>
+        <li><strong>Use Cases:</strong> Use `TreeSet` when you need a collection of unique elements sorted in a specific order, such as maintaining a sorted set of elements.</li>
+    </ul>
+
+    <h2>Example:</h2>
+    <pre><code>
+// HashSet Example
+Set&lt;String&gt; hashSet = new HashSet&lt;&gt;();
+hashSet.add("Apple");
+hashSet.add("Banana");
+hashSet.add("Cherry");
+
+// TreeSet Example (Natural Ordering)
+Set&lt;String&gt; treeSet = new TreeSet&lt;&gt;();
+treeSet.add("Apple");
+treeSet.add("Banana");
+treeSet.add("Cherry");
+    </code></pre>
+
+    <p>In this example, both `HashSet` and `TreeSet` are used to store a set of fruits. `HashSet` does not guarantee any specific order of elements, while `TreeSet` will maintain the elements in their natural order (lexicographically).</p>
+
+</body>
+</html>

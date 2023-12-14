@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Difference Between FileReader and BufferedReader in Java</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <p>In Java, both <code>FileReader</code> and <code>BufferedReader</code> are used for reading text files, but they serve different purposes and offer different features.</p>
+
+    <h2>FileReader</h2>
+    <ul>
+        <li><strong>Purpose:</strong> <code>FileReader</code> is used to read characters from a file.</li>
+        <li><strong>Character-Level Reading:</strong> It reads one character at a time, which can be inefficient for large files.</li>
+        <li><strong>Performance:</strong> It does not provide buffering, so it may result in slow I/O operations as it reads characters directly from the file.</li>
+        <li><strong>Usage:</strong> Typically, <code>FileReader</code> is used when simple character-level reading is required, and performance is not a critical concern.</li>
+    </ul>
+
+    <h2>BufferedReader</h2>
+    <ul>
+        <li><strong>Purpose:</strong> <code>BufferedReader</code> is used to read text from a character input stream with efficient buffering.</li>
+        <li><strong>Buffering:</strong> It reads text in chunks (lines or specified buffer size), making it more efficient for I/O operations, especially when dealing with large files.</li>
+        <li><strong>Performance:</strong> It offers improved performance compared to <code>FileReader</code> because of buffering.</li>
+        <li><strong>Usage:</strong> <code>BufferedReader</code> is commonly used when reading text files efficiently. It is especially useful for reading lines of text.</li>
+    </ul>
+
+    <h2>Example:</h2>
+    <pre><code>
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class FileReaderVsBufferedReader {
+    public static void main(String[] args) {
+        try {
+            // Using FileReader
+            FileReader fileReader = new FileReader("sample.txt");
+            int character;
+            while ((character = fileReader.read()) != -1) {
+                System.out.print((char) character);
+            }
+            fileReader.close();
+
+            // Using BufferedReader
+            BufferedReader bufferedReader = new BufferedReader(new FileReader("sample.txt"));
+            String line;
+            while ((line = bufferedReader.readLine()) != null) {
+                System.out.println(line);
+            }
+            bufferedReader.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+    </code></pre>
+
+    <p>In this example, both <code>FileReader</code> and <code>BufferedReader</code> are used to read text from a file named "sample.txt." You can see the difference in usage and performance between the two.</p>
+
+</body>
+</html>

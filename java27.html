@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stream API in Java 8</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <p>The Stream API introduced in Java 8 is a powerful and expressive feature that enables developers to work with collections of data in a functional and declarative way. Streams provide a concise and efficient way to perform operations on data, making code more readable and maintainable.</p>
+
+    <h2>Key Features of the Stream API:</h2>
+    <ul>
+        <li><strong>Declarative Syntax:</strong> Streams allow you to express operations on data in a declarative manner, making code more expressive and easier to understand.</li>
+        <li><strong>Laziness:</strong> Stream operations are often lazy, meaning that they are only executed when needed. This can improve performance by avoiding unnecessary computations.</li>
+        <li><strong>Immutable Data:</strong> Streams do not modify the underlying data; instead, they produce new streams with the transformed data, ensuring immutability.</li>
+        <li><strong>Parallel Processing:</strong> Streams can be easily parallelized, allowing for efficient processing of large data sets on multi-core processors.</li>
+        <li><strong>Common Operations:</strong> Streams provide a rich set of operations, including filtering, mapping, reducing, and more, for working with data collections.</li>
+    </ul>
+
+    <h2>Benefits of Using the Stream API:</h2>
+    <ul>
+        <li><strong>Readability:</strong> Stream operations use a fluent and readable syntax, making code more self-explanatory.</li>
+        <li><strong>Conciseness:</strong> Streams reduce the need for explicit loops and temporary collections, leading to more concise code.</li>
+        <li><strong>Expressiveness:</strong> With operations like <code>filter</code>, <code>map</code>, and <code>reduce</code>, streams allow developers to express data transformations and computations more naturally.</li>
+        <li><strong>Parallelism:</strong> Parallel stream processing can significantly improve performance for tasks that can be parallelized, taking advantage of multi-core processors.</li>
+        <li><strong>Code Reusability:</strong> Stream operations can be reused on different data sources, promoting code reusability.</li>
+    </ul>
+
+    <h2>Example of Using the Stream API:</h2>
+    <pre><code>
+import java.util.List;
+import java.util.stream.Collectors;
+
+List&lt;Integer&gt; numbers = List.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+
+// Example: Filter even numbers and collect into a new list
+List&lt;Integer&gt; evenNumbers = numbers.stream()
+    .filter(n -&gt; n % 2 == 0)
+    .collect(Collectors.toList());
+    </code></pre>
+
+    <p>In this example, a stream of numbers is filtered to retain only even numbers, and the result is collected into a new list. This concise code demonstrates the benefits of the Stream API.</p>
+
+    <p>The Stream API is a significant enhancement in Java 8, offering a more modern and functional approach to working with collections, improving code quality, and enhancing productivity.</p>
+
+</body>
+</html>

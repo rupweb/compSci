@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Singleton Design Pattern in Java</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <p>The Singleton design pattern is a creational design pattern that ensures a class has only one instance and provides a global point of access to that instance. It is often used when you want to control the instantiation of a class and limit it to a single instance throughout the application's lifecycle.</p>
+
+    <h2>Key Characteristics of the Singleton Pattern:</h2>
+    <ul>
+        <li><strong>Private Constructor:</strong> The Singleton class has a private constructor to prevent external instantiation.</li>
+        <li><strong>Static Instance:</strong> It maintains a static instance of itself, which is the sole instance of the class.</li>
+        <li><strong>Lazy or Eager Initialization:</strong> The instance can be lazily or eagerly initialized, depending on the specific requirements.</li>
+        <li><strong>Global Access:</strong> The Singleton instance is accessible globally through a static method, allowing other parts of the application to access it easily.</li>
+    </ul>
+
+    <h2>Example Implementation:</h2>
+    <pre><code>
+public class Singleton {
+    // Private static instance variable
+    private static Singleton instance;
+
+    // Private constructor to prevent external instantiation
+    private Singleton() {
+        // Initialization code here
+    }
+
+    // Public static method to access the Singleton instance
+    public static Singleton getInstance() {
+        // Lazily initialize the instance if it doesn't exist
+        if (instance == null) {
+            instance = new Singleton();
+        }
+        return instance;
+    }
+}
+
+public class SingletonExample {
+    public static void main(String[] args) {
+        // Get the Singleton instance
+        Singleton singleton1 = Singleton.getInstance();
+        Singleton singleton2 = Singleton.getInstance();
+
+        // Check if both instances are the same
+        if (singleton1 == singleton2) {
+            System.out.println("Both instances are the same. Singleton pattern works!");
+        } else {
+            System.out.println("Singleton pattern failed!");
+        }
+    }
+}
+    </code></pre>
+
+    <p>In this example, the <code>Singleton</code> class follows the Singleton design pattern. It has a private constructor and a static <code>getInstance()</code> method that returns the Singleton instance. The instance is lazily initialized, meaning it is created only when requested for the first time.</p>
+
+    <p>The <code>SingletonExample</code> class demonstrates how to use the Singleton pattern by getting two instances of the Singleton and checking if they are the same instance. If they are the same, it confirms that the Singleton pattern is working correctly.</p>
+
+</body>
+</html>

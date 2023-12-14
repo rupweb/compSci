@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Java Comparison: == vs .equals()</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>      
+    <h2><code>==</code> Operator</h2>
+    <p>
+        <strong>Purpose:</strong> Used for reference comparison for objects, and value comparison for primitive types.
+        <br>
+        <strong>Usage with Primitives:</strong> Compares actual values of primitive data types.
+        <br>
+        <strong>Usage with Objects:</strong> Checks if both references point to the same object in memory, not comparing contents.
+        <br>
+        <strong>Example:</strong>
+        <code><pre>String a = new String("Hello"); String b = new String("Hello"); System.out.println(a == b); // False</pre></code>
+    </p>
+
+    <h2><code>.equals()</code> Method</h2>
+    <p>
+        <strong>Purpose:</strong> Used for content comparison of objects.
+        <br>
+        <strong>Usage:</strong> Compares data or content of the objects, depending on implementation.
+        <br>
+        <strong>Default Behavior:</strong> In the <code>Object</code> class, it uses <code>==</code> for reference comparison, but often overridden.
+        <br>
+        <strong>Example:</strong>
+        <code><pre>String a = new String("Hello"); String b = new String("Hello"); System.out.println(a.equals(b)); // True</pre></code>
+    </p>
+
+    <h2>Key Differences</h2>
+    <ul>
+        <li><strong>Comparison Basis:</strong> <code>==</code> compares references or primitive values. <code>.equals()</code> compares object contents.</li>
+        <li><strong>Overriding:</strong> <code>.equals()</code> can be overridden; <code>==</code> cannot.</li>
+        <li><strong>Null Safe:</strong> <code>==</code> is null safe, while <code>.equals()</code> may throw <code>NullPointerException</code> if used on a null reference.</li>
+    </ul>
+
+    <script>
+        // JavaScript to add line breaks after semicolons in <code> elements
+        document.querySelectorAll('code').forEach(function(code) {
+            var html = code.innerHTML;
+            code.innerHTML = html.replace(/;/g, ';\n');
+        });
+    </script>
+</body>
+</html>

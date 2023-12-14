@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OSI Model and Its Layers</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <p>The OSI (Open Systems Interconnection) model is a conceptual framework that standardizes the functions of a telecommunication or networking system into seven distinct layers. Each layer has a specific role and responsibility in the communication process, and they work together to enable data exchange between devices in a network.</p>
+
+    <h2>OSI Model Layers</h2>
+    <p>The OSI model consists of seven layers, organized from the lowest level (Layer 1) to the highest level (Layer 7). Each layer serves a specific purpose:</p>
+
+    <h3>Layer 1: Physical Layer</h3>
+    <p>The Physical Layer deals with the physical aspects of network communication. It defines the hardware components, cables, electrical signals, and transmission media. This layer is responsible for transmitting raw bits over a physical medium.</p>
+
+    <h3>Layer 2: Data Link Layer</h3>
+    <p>The Data Link Layer is responsible for node-to-node communication. It ensures data integrity, error detection, and flow control. It also manages MAC (Media Access Control) addresses for devices on a local network.</p>
+
+    <h3>Layer 3: Network Layer</h3>
+    <p>The Network Layer focuses on routing data packets from the source to the destination across multiple networks. It uses logical addresses (such as IP addresses) to determine the best path for data transmission.</p>
+
+    <h3>Layer 4: Transport Layer</h3>
+    <p>The Transport Layer manages end-to-end communication and data segmentation. It provides services like error recovery, flow control, and data reassembly. Protocols like TCP (Transmission Control Protocol) and UDP (User Datagram Protocol) operate at this layer.</p>
+
+    <h3>Layer 5: Session Layer</h3>
+    <p>The Session Layer establishes, manages, and terminates communication sessions between applications. It handles session synchronization and allows multiple conversations (sessions) to occur simultaneously.</p>
+
+    <h3>Layer 6: Presentation Layer</h3>
+    <p>The Presentation Layer is responsible for data translation, encryption, and compression. It ensures that data is in a format that the application layer can understand and handles data encryption and decryption if needed.</p>
+
+    <h3>Layer 7: Application Layer</h3>
+    <p>The Application Layer is the topmost layer and is responsible for providing network services directly to the user or application. It includes various application protocols, such as HTTP (Hypertext Transfer Protocol), SMTP (Simple Mail Transfer Protocol), and FTP (File Transfer Protocol).</p>
+
+    <h2>Interactions Between Layers</h2>
+    <p>Communication between devices in a network involves data passing through each layer, from the Application Layer on the sender's side to the Physical Layer, then traveling across the network, and finally passing through the Physical Layer to the Application Layer on the receiver's side.</p>
+
+    <h2>Conclusion</h2>
+    <p>The OSI model provides a standardized framework for understanding how network communication functions. It breaks down the complex process of data exchange into seven distinct layers, each with its unique responsibilities, making it easier to design, troubleshoot, and implement network protocols and technologies.</p>
+</body>
+</html>

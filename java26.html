@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lambda Expressions in Java</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <p>Lambda expressions are a feature introduced in Java 8 that allow you to define and use anonymous functions (also known as lambda functions or closures) in a more concise and expressive way. Lambda expressions simplify the use of functional interfaces, making your code more readable and maintainable.</p>
+
+    <h2>Syntax of Lambda Expressions:</h2>
+    <p>The basic syntax of a lambda expression consists of:</p>
+    <pre><code>(parameter_list) -> expression_or_statement</code></pre>
+
+    <p>Here's a breakdown:</p>
+    <ul>
+        <li><strong>Parameter List:</strong> It specifies the parameters that the lambda expression accepts. You can omit the parameter list if there are no parameters or use parentheses for an empty parameter list.</li>
+        <li><strong>Arrow (->):</strong> The arrow separates the parameter list from the expression or statement.</li>
+        <li><strong>Expression or Statement:</strong> It defines the body of the lambda expression. It can be a single expression or a block of statements enclosed in curly braces.</li>
+    </ul>
+
+    <h2>Examples of Lambda Expressions:</h2>
+    <p>Here are some examples of lambda expressions in Java:</p>
+
+    <h3>1. Lambda for a Simple Operation:</h3>
+    <pre><code>
+// Lambda expression to add two numbers
+BinaryOperator&lt;Integer&gt; add = (a, b) -> a + b;
+
+int result = add.apply(5, 3); // Result: 8
+    </code></pre>
+
+    <h3>2. Lambda with a Block of Statements:</h3>
+    <pre><code>
+// Lambda expression with a block of statements
+Runnable runnable = () -> {
+    for (int i = 0; i &lt; 5; i++) {
+        System.out.println("Count: " + i);
+    }
+};
+
+runnable.run();
+    </code></pre>
+
+    <h3>3. Lambda with Predicate:</h3>
+    <pre><code>
+import java.util.List;
+import java.util.stream.Collectors;
+
+// Lambda expression to filter even numbers from a list
+List&lt;Integer&gt; numbers = List.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+List&lt;Integer&gt; evenNumbers = numbers.stream()
+    .filter(n -&gt; n % 2 == 0)
+    .collect(Collectors.toList());
+    </code></pre>
+
+    <p>Lambda expressions are commonly used with functional interfaces like <code>Runnable</code>, <code>Consumer</code>, <code>Predicate</code>, and others to provide concise implementations of their abstract methods.</p>
+
+    <p>They offer a more readable alternative to anonymous inner classes, especially in scenarios where you need to pass behavior as an argument to methods or perform operations on collections using the Stream API.</p>
+
+</body>
+</html>

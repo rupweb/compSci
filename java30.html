@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statement vs. PreparedStatement in JDBC</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <p>In JDBC (Java Database Connectivity), both Statement and PreparedStatement are used to execute SQL queries against a database. However, they have significant differences in terms of performance, security, and flexibility.</p>
+
+    <h2>Statement:</h2>
+    <ul>
+        <li><strong>Dynamic SQL:</strong> Statement objects are used for executing dynamic SQL queries where the query string is constructed at runtime. This can lead to SQL injection vulnerabilities if not handled carefully.</li>
+        <li><strong>Execution:</strong> Each time a Statement is executed, the query is parsed and compiled by the database server, which can impact performance for frequently executed queries.</li>
+        <li><strong>Usage:</strong> Statement is suitable for executing simple, one-time SQL queries without parameters.</li>
+        <li><strong>Example:</strong></li>
+        <pre><code>
+Statement statement = connection.createStatement();
+String sqlQuery = "SELECT * FROM employees WHERE department = 'HR'";
+ResultSet resultSet = statement.executeQuery(sqlQuery);
+        </code></pre>
+    </ul>
+
+    <h2>PreparedStatement:</h2>
+    <ul>
+        <li><strong>Precompiled SQL:</strong> PreparedStatement objects are used for executing precompiled SQL queries with placeholders for parameters. The query is compiled once and can be reused with different parameter values, improving performance.</li>
+        <li><strong>Security:</strong> PreparedStatement provides protection against SQL injection because parameter values are automatically escaped and sanitized.</li>
+        <li><strong>Execution:</strong> PreparedStatements are generally faster than Statements for repeated executions of the same query with different parameters, as the query plan is cached by the database server.</li>
+        <li><strong>Usage:</strong> PreparedStatement is recommended for executing parameterized queries where input values can vary.</li>
+        <li><strong>Example:</strong></li>
+        <pre><code>
+String sqlQuery = "SELECT * FROM employees WHERE department = ?";
+PreparedStatement preparedStatement = connection.prepareStatement(sqlQuery);
+preparedStatement.setString(1, "HR");
+ResultSet resultSet = preparedStatement.executeQuery();
+        </code></pre>
+    </ul>
+
+    <h2>Summary:</h2>
+    <p>Statement and PreparedStatement in JDBC serve different purposes. Statement is suitable for simple, one-time queries with fixed SQL strings, while PreparedStatement is more efficient, secure, and suitable for parameterized queries that can be reused with varying parameter values.</p>
+
+</body>
+</html>

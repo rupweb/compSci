@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The throw Statement in Java</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <p>The <code>throw</code> statement in Java is used to explicitly raise an exception or error during program execution. It allows you to indicate that an exceptional situation has occurred and that the program should handle it appropriately. The <code>throw</code> statement is typically used in combination with the <code>try-catch</code> block to handle exceptions.</p>
+
+    <h2>Syntax of the throw Statement:</h2>
+    <pre><code>
+throw throwableObject;
+    </code></pre>
+
+    <p>Where <code>throwableObject</code> is an instance of a class that extends the <code>Throwable</code> class, such as an exception or error object.</p>
+
+    <h2>How the throw Statement Works:</h2>
+    <ul>
+        <li>When the <code>throw</code> statement is executed, it generates an exception or error indicated by the <code>throwableObject</code>.</li>
+        <li>The generated exception is then propagated up the call stack in search of an appropriate <code>catch</code> block to handle it.</li>
+        <li>If a matching <code>catch</code> block is found, the program's control is transferred to that block for exception handling.</li>
+        <li>If no suitable <code>catch</code> block is found in the current method or any of its callers, the program may terminate with an unhandled exception, leading to an error message and stack trace.</li>
+    </ul>
+
+    <h2>Common Use Cases:</h2>
+    <ul>
+        <li>Use the <code>throw</code> statement to signal and handle exceptional conditions, such as invalid input or unexpected errors, by creating and throwing custom exception objects.</li>
+        <li>It is often used within methods to indicate that a specific error condition has occurred and should be handled by higher-level code.</li>
+    </ul>
+
+    <h2>Example:</h2>
+    <pre><code>
+public void divide(int dividend, int divisor) {
+    if (divisor == 0) {
+        throw new ArithmeticException("Division by zero is not allowed.");
+    }
+    int result = dividend / divisor;
+    System.out.println("Result: " + result);
+}
+    </code></pre>
+
+    <p>In this example, the <code>throw</code> statement is used to throw an <code>ArithmeticException</code> when attempting to divide by zero. This custom exception is then caught and handled at a higher level.</p>
+
+</body>
+</html>

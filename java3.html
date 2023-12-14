@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Java Keywords: final, finally, finalize</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h2>1. final Keyword</h2>
+    <p>
+        <ul>
+            <li><strong>Usage:</strong> Applied to classes, methods, and variables.</li>
+            <li><strong>Classes:</strong> A final class cannot be subclassed.
+                <code>final class MyFinalClass { ... }</code>
+            </li>
+            <li><strong>Methods:</strong> A final method cannot be overridden by subclasses.
+                <code>public final void myFinalMethod() { ... }</code>
+            </li>
+            <li><strong>Variables:</strong> A final variable can only be initialized once and its value cannot be changed.
+                <code>final int MY_CONSTANT = 10;</code>
+            </li>
+        </ul>
+    </p>
+
+    <h2>2. finally Keyword</h2>
+    <p>
+        <ul>
+            <li><strong>Usage:</strong> Used in exception handling within try-catch blocks.</li>
+            <li><strong>Purpose:</strong> Code in the finally block is executed after the try and catch blocks, regardless of whether an exception was thrown or caught.
+                <code>
+                    try { 
+                        // Code that might throw an exception
+                    } catch (ExceptionType name) {
+                        // Exception handling
+                    } finally {
+                        // Code to be executed after try and catch
+                    }
+                </code>
+            </li>
+        </ul>
+    </p>
+
+    <h2>3. finalize Method</h2>
+    <p>
+        <ul>
+            <li><strong>Usage:</strong> A method of the Object class, called by the garbage collector on an object.</li>
+            <li><strong>Purpose:</strong> Used for cleanup activities but is deprecated as of Java 9.
+                <code>protected void finalize() throws Throwable { ... }</code>
+            </li>
+        </ul>
+    </p>
+
+</body>
+</html>

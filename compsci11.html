@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Normalization in Database Design</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <p>Normalization is a database design technique that organizes tables in a manner that reduces redundancy and dependency. It involves dividing large tables into smaller and more manageable tables and defining relationships between them.</p>
+
+    <h2>Advantages of Normalization</h2>
+    <ul>
+        <li>
+            <h3>Reduces Data Redundancy</h3>
+            <p>Normalization minimizes duplicate data by ensuring that each piece of data is stored only once. This leads to efficient use of storage and reduces inconsistencies.</p>
+        </li>
+        <li>
+            <h3>Improves Data Integrity</h3>
+            <p>By reducing redundancy, normalization makes it easier to maintain data integrity. Changes made in one place are reflected throughout the database, minimizing data anomalies.</p>
+        </li>
+        <li>
+            <h3>Facilitates Easier Updates</h3>
+            <p>Updating data becomes simpler and less error-prone, as there are fewer duplicate data items that need to be updated.</p>
+        </li>
+        <li>
+            <h3>Optimizes Query Performance</h3>
+            <p>Well-normalized tables can lead to more efficient, streamlined queries. They often require fewer joins and can be faster to query under certain conditions.</p>
+        </li>
+    </ul>
+
+    <h2>Disadvantages of Normalization</h2>
+    <ul>
+        <li>
+            <h3>Complexity</h3>
+            <p>Normalization can increase the complexity of the database design. More tables often mean more joins in queries, which can be harder to manage and understand.</p>
+        </li>
+        <li>
+            <h3>Performance Impact</h3>
+            <p>While normalization can optimize certain queries, it can also lead to performance issues in others. Extensive use of joins can slow down query execution, particularly for large databases.</p>
+        </li>
+        <li>
+            <h3>Design Challenges</h3>
+            <p>Creating a well-normalized database requires careful planning and design. It can be challenging to strike the right balance between normalization and practical performance needs.</p>
+        </li>
+    </ul>
+
+    <h2>Conclusion</h2>
+    <p>Normalization is a powerful tool in database design. While it offers significant benefits in terms of data integrity and storage efficiency, it also introduces complexity and can impact performance. The key is to apply normalization judiciously, considering the specific needs and context of the database application.</p>
+</body>
+</html>

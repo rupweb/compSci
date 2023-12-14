@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JDBC in Java</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <p>JDBC, which stands for Java Database Connectivity, is a Java-based API (Application Programming Interface) that provides a standard way for Java applications to interact with relational databases. JDBC enables Java applications to perform database operations such as connecting to databases, executing SQL queries, and retrieving or updating data.</p>
+
+    <h2>Key Roles and Functions of JDBC:</h2>
+    <ul>
+        <li><strong>Database Connectivity:</strong> JDBC allows Java applications to establish connections to various relational databases, including popular databases like MySQL, Oracle, PostgreSQL, and more.</li>
+        <li><strong>Database Operations:</strong> It provides methods to execute SQL statements (queries and updates) against the connected database. Developers can create, read, update, and delete data in the database using JDBC.</li>
+        <li><strong>Driver Management:</strong> JDBC supports different database drivers (implementations) that facilitate communication between Java applications and specific database systems. Each database typically has its own JDBC driver.</li>
+        <li><strong>ResultSet Handling:</strong> JDBC allows developers to retrieve and process data returned by SQL queries in the form of result sets. Result sets can be iterated through to extract data for further processing.</li>
+        <li><strong>Transaction Management:</strong> JDBC supports transaction management, enabling developers to group database operations into transactions. Transactions ensure data consistency and integrity.</li>
+        <li><strong>Exception Handling:</strong> JDBC provides exceptions and error handling mechanisms to deal with database-related errors and issues gracefully.</li>
+    </ul>
+
+    <h2>Example of Using JDBC:</h2>
+    <pre><code>
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+public class JDBCDemo {
+    public static void main(String[] args) {
+        String jdbcUrl = "jdbc:mysql://localhost:3306/mydatabase";
+        String username = "myuser";
+        String password = "mypassword";
+
+        try {
+            // Establish a database connection
+            Connection connection = DriverManager.getConnection(jdbcUrl, username, password);
+
+            // Create a SQL query
+            String sqlQuery = "SELECT * FROM employees WHERE department = ?";
+            PreparedStatement preparedStatement = connection.prepareStatement(sqlQuery);
+            preparedStatement.setString(1, "HR");
+
+            // Execute the query
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            // Process the result set
+            while (resultSet.next()) {
+                int employeeId = resultSet.getInt("employee_id");
+                String employeeName = resultSet.getString("employee_name");
+                System.out.println("Employee ID: " + employeeId + ", Name: " + employeeName);
+            }
+
+            // Close resources
+            resultSet.close();
+            preparedStatement.close();
+            connection.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+}
+    </code></pre>
+
+    <p>In this example, a Java application uses JDBC to connect to a MySQL database, execute a SQL query to retrieve employee data, and process the results.</p>
+
+    <h2>Importance of JDBC:</h2>
+    <p>JDBC is a fundamental technology for Java applications that interact with databases. It provides a bridge between Java and relational databases, enabling developers to build database-driven applications, web applications, and more. JDBC plays a crucial role in data retrieval, storage, and manipulation in Java-based systems.</p>
+
+</body>
+</html>

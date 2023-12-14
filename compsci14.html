@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Process vs. Thread: Differences</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <p>Processes and threads are fundamental concepts in computer science and operating systems. They both represent units of execution, but they have distinct characteristics and use cases.</p>
+
+    <h2>Process</h2>
+    <ul>
+        <li><strong>Definition:</strong> A process is an independent and self-contained program that runs in its own memory space.</li>
+        <li><strong>Isolation:</strong> Processes are isolated from each other. Each process has its own memory and resources, and they do not share memory directly.</li>
+        <li><strong>Overhead:</strong> Processes have higher overhead in terms of memory and system resources because they maintain separate memory spaces.</li>
+        <li><strong>Communication:</strong> Inter-process communication (IPC) mechanisms, such as message passing or shared files, are used to facilitate communication between processes.</li>
+        <li><strong>Reliability:</strong> Processes are more reliable and robust. If one process crashes, it does not affect other processes.</li>
+    </ul>
+
+    <h2>Thread</h2>
+    <ul>
+        <li><strong>Definition:</strong> A thread is a lightweight unit of execution within a process. Threads within the same process share the same memory space.</li>
+        <li><strong>Isolation:</strong> Threads within a process share memory and resources, making them more tightly coupled.</li>
+        <li><strong>Overhead:</strong> Threads have lower overhead in terms of memory because they share resources with other threads in the same process.</li>
+        <li><strong>Communication:</strong> Threads within the same process can communicate more efficiently through shared memory and data structures.</li>
+        <li><strong>Reliability:</strong> Threads are less reliable. If one thread in a process crashes, it can potentially affect other threads in the same process.</li>
+    </ul>
+
+    <h2>Use Cases</h2>
+    <p>Processes are typically used when isolation between programs is critical, such as in multi-user systems or when running different applications. Threads are used within a process for tasks that can benefit from sharing memory and resources, such as concurrent execution of code within an application.</p>
+
+    <h2>Conclusion</h2>
+    <p>Processes and threads serve different purposes in computing. Processes provide isolation and robustness, while threads offer lightweight concurrent execution and efficient communication within a process. The choice between them depends on the specific requirements of the application.</p>
+</body>
+</html>

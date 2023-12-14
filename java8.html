@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checked vs. Unchecked Exceptions in Java</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <p>In Java, exceptions are categorized into two main types: checked exceptions and unchecked exceptions (also known as runtime exceptions). These two types of exceptions differ in their handling requirements and behavior.</p>
+
+    <h2>Checked Exceptions:</h2>
+    <ul>
+        <li><strong>Checked exceptions</strong> are exceptions that must be declared or handled explicitly using a <code>try-catch</code> block or by specifying <code>throws</code> in the method signature.</li>
+        <li>These exceptions typically represent external factors that the program should anticipate and handle gracefully.</li>
+        <li>Examples of checked exceptions include <code>IOException</code>, <code>SQLException</code>, and <code>ClassNotFoundException</code>.</li>
+        <li>The compiler enforces the handling of checked exceptions, making it a requirement for the code to compile.</li>
+    </ul>
+
+    <h2>Unchecked Exceptions (Runtime Exceptions):</h2>
+    <ul>
+        <li><strong>Unchecked exceptions</strong>, also known as runtime exceptions, do not need to be declared or explicitly handled in code.</li>
+        <li>These exceptions typically represent programming errors or unexpected conditions within the program.</li>
+        <li>Examples of unchecked exceptions include <code>NullPointerException</code>, <code>ArrayIndexOutOfBoundsException</code>, and <code>ArithmeticException</code>.</li>
+        <li>Unchecked exceptions are not enforced by the compiler, and they can occur at runtime without prior indication.</li>
+    </ul>
+
+    <h2>Differences:</h2>
+    <table>
+        <tr>
+            <th>Aspect</th>
+            <th>Checked Exceptions</th>
+            <th>Unchecked Exceptions (Runtime Exceptions)</th>
+        </tr>
+        <tr>
+            <td>Handling Requirement</td>
+            <td>Must be declared or handled explicitly.</td>
+            <td>Not required to be declared or handled explicitly.</td>
+        </tr>
+        <tr>
+            <td>Typical Use Cases</td>
+            <td>External factors, I/O operations, database interactions, network operations.</td>
+            <td>Programming errors, null references, array index out of bounds, arithmetic errors.</td>
+        </tr>
+        <tr>
+            <td>Compiler Enforcement</td>
+            <td>Enforced by the compiler; code won't compile without handling.</td>
+            <td>Not enforced by the compiler; no compile-time requirement.</td>
+        </tr>
+    </table>
+
+    <h2>Example:</h2>
+    <pre><code>
+// Checked Exception Example
+try {
+    FileInputStream file = new FileInputStream("file.txt");
+    // Code that may throw IOException
+} catch (IOException e) {
+    // Handle the exception
+}
+
+// Unchecked Exception (Runtime Exception) Example
+int[] arr = {1, 2, 3};
+int result = arr[4]; // This will throw ArrayIndexOutOfBoundsException at runtime
+    </code></pre>
+
+    <p>In the checked exception example, we use a <code>try-catch</code> block to handle an <code>IOException</code>, which is a checked exception related to file operations. In the unchecked exception example, we access an array element out of bounds without explicit handling, leading to an <code>ArrayIndexOutOfBoundsException</code>.</p>
+
+</body>
+</html>

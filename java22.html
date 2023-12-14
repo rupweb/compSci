@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Builder Design Pattern in Java</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <p>The Builder design pattern is a creational design pattern that is used to construct a complex object step by step. It separates the construction of an object from its representation, allowing the same construction process to create different representations of the object.</p>
+
+    <h2>Key Components:</h2>
+    <ul>
+        <li><strong>Director:</strong> The director is responsible for orchestrating the construction process by using a builder.</li>
+        <li><strong>Builder:</strong> The builder defines an interface for constructing parts of the object. It may include methods for setting various attributes or properties of the object.</li>
+        <li><strong>Concrete Builder:</strong> Concrete builder classes implement the builder interface and provide specific implementations for constructing the object. Each concrete builder can create a different representation of the object.</li>
+        <li><strong>Product:</strong> The product is the final object being constructed. It typically has a complex structure and is created using a builder.</li>
+    </ul>
+
+    <h2>Advantages of the Builder Pattern:</h2>
+    <ul>
+        <li><strong>Separation of Concerns:</strong> The pattern separates the construction logic from the representation, making the code more maintainable and flexible.</li>
+        <li><strong>Reusability:</strong> Builders can be reused to create different variations of the product without modifying the client code.</li>
+        <li><strong>Fluent Interface:</strong> It allows for a fluent and readable construction process, with method chaining to set attributes.</li>
+        <li><strong>Complex Object Creation:</strong> Useful when creating objects with numerous configuration options or optional parameters.</li>
+    </ul>
+
+    <h2>Example Implementation:</h2>
+    <pre><code>
+// Product
+class Pizza {
+    private String crust;
+    private String sauce;
+    private String topping;
+
+    public Pizza(String crust, String sauce, String topping) {
+        this.crust = crust;
+        this.sauce = sauce;
+        this.topping = topping;
+    }
+
+    // Getters for attributes
+    // ...
+}
+
+// Builder Interface
+interface PizzaBuilder {
+    Pizza build();
+    PizzaBuilder setCrust(String crust);
+    PizzaBuilder setSauce(String sauce);
+    PizzaBuilder setTopping(String topping);
+}
+
+// Concrete Builder
+class MargheritaPizzaBuilder implements PizzaBuilder {
+    private String crust;
+    private String sauce;
+    private String topping;
+
+    @Override
+    public Pizza build() {
+        return new Pizza(crust, sauce, topping);
+    }
+
+    @Override
+    public PizzaBuilder setCrust(String crust) {
+        this.crust = crust;
+        return this;
+    }
+
+    @Override
+    public PizzaBuilder setSauce(String sauce) {
+        this.sauce = sauce;
+        return this;
+    }
+
+    @Override
+    public PizzaBuilder setTopping(String topping) {
+        this.topping = topping;
+        return this;
+    }
+}
+
+// Director
+class PizzaDirector {
+    public Pizza createPizza(PizzaBuilder builder) {
+        return builder
+            .setCrust("Thin")
+            .setSauce("Tomato")
+            .setTopping("Cheese")
+            .build();
+    }
+}
+
+public class BuilderPatternExample {
+    public static void main(String[] args) {
+        PizzaDirector director = new PizzaDirector();
+        PizzaBuilder builder = new MargheritaPizzaBuilder();
+        Pizza margheritaPizza = director.createPizza(builder);
+
+        System.out.println("Margherita Pizza: " + margheritaPizza.toString());
+    }
+}
+    </code></pre>
+
+    <p>In this example, we have a <strong>Pizza</strong> class as the product, a <strong>PizzaBuilder</strong> interface, and a <strong>MargheritaPizzaBuilder</strong> as a concrete builder. The <strong>PizzaDirector</strong> orchestrates the construction process, and we create a Margherita pizza using the builder pattern.</p>
+
+</body>
+</html>

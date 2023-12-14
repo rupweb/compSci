@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binary Search Tree Implementation</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        code {
+            display: block;
+            white-space: pre-wrap;
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <p>This document outlines the code for a simple binary search tree (BST) and its basic operations such as insertion and in-order traversal.</p>
+    
+    <h2>Binary Search Tree Class</h2>
+    <code>
+        public class BinarySearchTree {
+            private Node root;
+
+            private class Node {
+                int key;
+                Node left, right;
+
+                public Node(int item) {
+                    key = item;
+                    left = right = null;
+                }
+            }
+
+            public BinarySearchTree() {
+                root = null;
+            }
+
+            public void insert(int key) {
+                root = insertRec(root, key);
+            }
+
+            private Node insertRec(Node root, int key) {
+                if (root == null) {
+                    root = new Node(key);
+                    return root;
+                }
+
+                if (key &lt; root.key)
+                    root.left = insertRec(root.left, key);
+                else if (key &gt; root.key)
+                    root.right = insertRec(root.right, key);
+
+                return root;
+            }
+
+            public void inorder() {
+                inorderRec(root);
+            }
+
+            private void inorderRec(Node root) {
+                if (root != null) {
+                    inorderRec(root.left);
+                    System.out.println(root.key);
+                    inorderRec(root.right);
+                }
+            }
+        }
+    </code>
+
+    <h2>Binary Search Tree Usage</h2>
+    <code>
+        public class Main {
+            public static void main(String[] args) {
+                BinarySearchTree bst = new BinarySearchTree();
+
+                bst.insert(50);
+                bst.insert(30);
+                bst.insert(20);
+                bst.insert(40);
+                bst.insert(70);
+                bst.insert(60);
+                bst.insert(80);
+
+                // Print the BST in in-order traversal
+                System.out.println("Inorder traversal of the given tree:");
+                bst.inorder();
+            }
+        }
+    </code>
+
+    <p>The <code>BinarySearchTree</code> class contains a nested <code>Node</code> class for tree nodes, with methods for inserting new nodes and in-order traversal. The <code>Main</code> class demonstrates how to use the <code>BinarySearchTree</code> class.</p>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Static Keyword in Java</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>      
+    <p>In Java, the <code>static</code> keyword has several important uses. It can be applied to variables, methods, blocks, and nested classes. Below is a breakdown of its uses and implications:</p>
+
+    <h2>1. Static Variables</h2>
+    <p>
+        <ul>
+            <li>A <code>static</code> variable is shared among all instances of a class and belongs to the class itself.</li>
+            <li>Modifications to a static variable by one instance affect all other instances.</li>
+            <li>Example:
+                <code>class ClassName { static int staticVar = 10; }</code>
+            </li>
+        </ul>
+    </p>
+
+    <h2>2. Static Methods</h2>
+    <p>
+        <ul>
+            <li>Static methods belong to the class and can be called without creating an instance of the class.</li>
+            <li>They can only directly access other static variables and methods.</li>
+            <li>Example:
+                <code>class ClassName { static void staticMethod() { /* code */ } }</code>
+            </li>
+        </ul>
+    </p>
+
+    <h2>3. Static Blocks</h2>
+    <p>
+        <ul>
+            <li>Used for static initialization of a class.</li>
+            <li>Executed when the class is loaded by the JVM.</li>
+            <li>Example:
+                <code>class ClassName { static { /* initialization code */ } }</code>
+            </li>
+        </ul>
+    </p>
+
+    <h2>4. Static Nested Classes</h2>
+    <p>
+        <ul>
+            <li>A nested class declared as static is known as a static nested class.</li>
+            <li>It can be accessed without an instance of the outer class.</li>
+        </ul>
+    </p>
+
+    <h2>5. Static Import</h2>
+    <p>
+        <ul>
+            <li>Allows importing static members of a class for use without class qualification.</li>
+            <li>Reduces verbosity in code.</li>
+            <li>Example:
+                <code>import static java.lang.Math.*;</code>
+            </li>
+        </ul>
+    </p>
+
+    <p>Understanding the use of <code>static</code> is crucial for efficient Java programming, especially considering its impact on class behavior and memory management.</p>
+
+</body>
+</html>

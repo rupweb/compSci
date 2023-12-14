@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Networking Platform Database Schema</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h2>Overview</h2>
+    <p>This schema represents the basic structure of a database for a social networking platform, focusing on users, their relationships, posts, and interactions.</p>
+
+    <h2>Tables</h2>
+
+    <h3>1. Users</h3>
+    <table>
+        <tr><th>Column</th><th>Type</th><th>Description</th></tr>
+        <tr><td>UserID</td><td>Integer</td><td>Unique identifier for the user</td></tr>
+        <tr><td>Username</td><td>String</td><td>Username of the user</td></tr>
+        <tr><td>Email</td><td>String</td><td>Email address of the user</td></tr>
+        <tr><td>Password</td><td>String</td><td>Hashed password for user authentication</td></tr>
+        <tr><td>JoinDate</td><td>DateTime</td><td>Date and time the user joined the platform</td></tr>
+        <tr><td>ProfileInfo</td><td>Text</td><td>Additional information about the user</td></tr>
+    </table>
+
+    <h3>2. Friends</h3>
+    <table>
+        <tr><th>Column</th><th>Type</th><th>Description</th></tr>
+        <tr><td>FriendshipID</td><td>Integer</td><td>Unique identifier for the friendship</td></tr>
+        <tr><td>User1ID</td><td>Integer</td><td>UserID of the first user in the friendship</td></tr>
+        <tr><td>User2ID</td><td>Integer</td><td>UserID of the second user in the friendship</td></tr>
+        <tr><td>Since</td><td>DateTime</td><td>Date and time the friendship was established</td></tr>
+    </table>
+
+    <h3>3. Posts</h3>
+    <table>
+        <tr><th>Column</th><th>Type</th><th>Description</th></tr>
+        <tr><td>PostID</td><td>Integer</td><td>Unique identifier for the post</td></tr>
+        <tr><td>UserID</td><td>Integer</td><td>UserID of the user who created the post</td></tr>
+        <tr><td>Content</td><td>Text</td><td>The content of the post</td></tr>
+        <tr><td>PostDate</td><td>DateTime</td><td>Date and time the post was made</td></tr>
+    </table>
+
+    <h3>4. Comments</h3>
+    <table>
+        <tr><th>Column</th><th>Type</th><th>Description</th></tr>
+        <tr><td>CommentID</td><td>Integer</td><td>Unique identifier for the comment</td></tr>
+        <tr><td>PostID</td><td>Integer</td><td>PostID of the post on which the comment is made</td></tr>
+        <tr><td>UserID</td><td>Integer</td><td>UserID of the user who made the comment</td></tr>
+        <tr><td>Comment</td><td>Text</td><td>The content of the comment</td></tr>
+        <tr><td>CommentDate</td><td>DateTime</td><td>Date and time the comment was made</td></tr>
+    </table>
+
+    <h2>Relationships</h2>
+    <ul>
+        <li>Each user can have many friends (Friends table connects two Users).</li>
+        <li>Each user can create many posts (Posts table refers to Users).</li>
+        <li>Each post can have many comments (Comments table refers to Posts).</li>
+    </ul>
+
+    <p>This schema is a simplified representation and can be extended with more details like likes, shares, privacy settings, etc., based on the requirements of the social networking platform.</p>
+</body>
+</html>

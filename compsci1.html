@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quicksort Algorithm Time Complexity</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <p>The time complexity of the Quicksort algorithm varies based on the scenario:</p>
+
+    <h2>1. Best Case (O(n log n))</h2>
+    <ul>
+        <li>In the best-case scenario, the partition process divides the array into two equal halves.</li>
+        <li>This results in a recurrence relation: T(n) = 2 * T(n/2) + O(n).</li>
+        <li>The solution to this recurrence relation is O(n log n).</li>
+    </ul>
+
+    <h2>2. Average Case (O(n log n))</h2>
+    <ul>
+        <li>In the average case, the partitions are not exactly equal but are reasonably balanced.</li>
+        <li>The average-case complexity is also O(n log n), requiring more complex mathematical analysis.</li>
+    </ul>
+
+    <h2>3. Worst Case (O(n^2))</h2>
+    <ul>
+        <li>The worst-case scenario occurs when the partition process always picks the greatest or smallest element as the pivot.</li>
+        <li>This results in one of the sub-arrays always being empty, leading to T(n) = T(n-1) + O(n).</li>
+        <li>Solving this recurrence relation gives a complexity of O(n^2).</li>
+    </ul>
+
+    <p>Note: The average case complexity is more representative of Quicksort's real-world performance, and strategies like choosing a random pivot are used to avoid the worst-case scenario.</p>
+</body>
+</html>

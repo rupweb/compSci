@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Differences Between SQL and NoSQL Databases</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <p>SQL (Structured Query Language) and NoSQL are two types of database management systems that serve different needs in the data storage and retrieval domain. Understanding their differences is key to selecting the appropriate system for a given application.</p>
+
+    <h2>SQL Databases</h2>
+    <ul>
+        <li><strong>Type:</strong> Relational Database Management System (RDBMS).</li>
+        <li><strong>Structure:</strong> Uses tables with fixed rows and columns. It requires a schema to define the structure of data.</li>
+        <li><strong>Query Language:</strong> Uses SQL for defining and manipulating data.</li>
+        <li><strong>Transactions:</strong> Supports ACID (Atomicity, Consistency, Isolation, Durability) properties.</li>
+        <li><strong>Scalability:</strong> Traditionally scaled vertically (increasing the capacity of a single server).</li>
+        <li><strong>Use Cases:</strong> Well-suited for complex queries and where data integrity is crucial.</li>
+    </ul>
+
+    <h2>NoSQL Databases</h2>
+    <ul>
+        <li><strong>Type:</strong> Non-relational or distributed database system.</li>
+        <li><strong>Structure:</strong> Uses a variety of data models, including document, graph, key-value, and wide-column stores. Does not require a fixed schema.</li>
+        <li><strong>Query Language:</strong> Does not use SQL. Each NoSQL database might have its own query language.</li>
+        <li><strong>Transactions:</strong> Some support ACID properties, but many focus on performance and scalability over strict transactional consistency.</li>
+        <li><strong>Scalability:</strong> Designed for horizontal scalability (distributing data across multiple servers).</li>
+        <li><strong>Use Cases:</strong> Ideal for large sets of distributed data and applications needing agility in working with diverse data types.</li>
+    </ul>
+
+    <h2>Key Differences</h2>
+    <table border="1">
+        <tr>
+            <th></th>
+            <th>SQL</th>
+            <th>NoSQL</th>
+        </tr>
+        <tr>
+            <td><strong>Type</strong></td>
+            <td>Relational</td>
+            <td>Non-relational</td>
+        </tr>
+        <tr>
+            <td><strong>Schema</strong></td>
+            <td>Fixed</td>
+            <td>Flexible</td>
+        </tr>
+        <tr>
+            <td><strong>Query Language</strong></td>
+            <td>SQL</td>
+            <td>Varies</td>
+        </tr>
+        <tr>
+            <td><strong>Transactions</strong></td>
+            <td>ACID Compliant</td>
+            <td>Varies</td>
+        </tr>
+        <tr>
+            <td><strong>Scalability</strong></td>
+            <td>Vertical</td>
+            <td>Horizontal</td>
+        </tr>
+        <tr>
+            <td><strong>Use Cases</strong></td>
+            <td>Complex Queries, Data Integrity</td>
+            <td>Large, Distributed Data Sets</td>
+        </tr>
+    </table>
+
+    <p>Both SQL and NoSQL databases have their own strengths and weaknesses. The choice between them should be based on the specific requirements of the project, such as the nature of the data, scalability needs, and the complexity of data operations.</p>
+</body>
+</html>
